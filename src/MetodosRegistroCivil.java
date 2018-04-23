@@ -20,8 +20,8 @@ public class MetodosRegistroCivil {
     public ArrayList<Localidad> listaLocalidades;          // lista de todas las localidades registradas en el sistema
     public ArrayList<Consulado> listaConsulados;           // lista de todos los consulados registrados en el sistema
     public static MetodosRegistroCivil instance = null;    // unico objeto de la clase MetodosRegistroCivil (singleton)
-    
-    
+    public ArrayList<Persona> listaAdministradores;
+    public Persona adminLogueado;
                    
     
     //constructor de la clase singleton de be ser privado para evitar nuevas instancias de este
@@ -32,6 +32,7 @@ public class MetodosRegistroCivil {
         this.listaDistritos = new ArrayList<Distrito>();            // lista distritos
         this.listaLocalidades = new ArrayList<Localidad>();         // lista localidades
         this.listaConsulados = new ArrayList<Consulado>();          // lista consulados
+        //setAdministradores();
     }
     
     //este metodo instancia una nueva persona por medio de los atributos recibidos por parámetros
@@ -90,7 +91,14 @@ public class MetodosRegistroCivil {
         }
         return null;
     }
-    
+    public Persona buscarAdministrador(String nombre){
+        for(int i = 0; i < listaAdministradores.size(); i++){
+            if(listaAdministradores.get(i).nombre.equals(nombre)){
+                return listaAdministradores.get(i);
+            }
+        }
+        return null;
+    }
 
 
     //metodo para retornar la clase singleton y si no existe la crea
@@ -99,4 +107,23 @@ public class MetodosRegistroCivil {
             instance = new MetodosRegistroCivil();
         return instance;
     }
+    // set y get de admin logueado
+
+    public Persona getAdminLogueado() {
+        return adminLogueado;
+    }
+
+    public void setAdminLogueado(Persona adminLogueado) {
+        this.adminLogueado = adminLogueado;
+    }
+    public void setAdministradores(){
+        Persona admin1 = new Persona("Administrador1", "", "", 0, 123, "Soltero", "", "m", "", "Costarricense", true, "");
+        Persona admin2 = new Persona("Administrador2", "", "", 0, 1234, "Soltero", "", "m", "", "Costarricense", true, "");
+        Persona admin3 = new Persona("Administrador3", "", "", 0, 12345, "Soltero", "", "m", "", "Costarricense", true, "");
+        
+        listaAdministradores.add(admin1);
+        listaAdministradores.add(admin2);
+        listaAdministradores.add(admin3);
+    }
+    
 }

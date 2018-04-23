@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -38,11 +41,11 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        nombreRegistroCivilTextField = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordFieldRegistroCivil = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -115,8 +118,8 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
         jLabel13.setText("Usuario");
         panelPrincipal.add(jLabel13);
         jLabel13.setBounds(30, 320, 120, 40);
-        panelPrincipal.add(jTextField2);
-        jTextField2.setBounds(190, 320, 130, 40);
+        panelPrincipal.add(nombreRegistroCivilTextField);
+        nombreRegistroCivilTextField.setBounds(190, 320, 130, 40);
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel15.setText("Contraseña");
@@ -139,12 +142,12 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
         panelPrincipal.add(jButton3);
         jButton3.setBounds(180, 550, 50, 50);
 
-        jPasswordField1.setText("jPasswordField1");
-        panelPrincipal.add(jPasswordField1);
-        jPasswordField1.setBounds(190, 430, 130, 40);
+        passwordFieldRegistroCivil.setText("jPasswordField1");
+        panelPrincipal.add(passwordFieldRegistroCivil);
+        passwordFieldRegistroCivil.setBounds(190, 430, 130, 40);
 
         getContentPane().add(panelPrincipal);
-        panelPrincipal.setBounds(350, 0, 0, 700);
+        panelPrincipal.setBounds(348, 0, 520, 700);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TSE _Reg.png"))); // NOI18N
         getContentPane().add(jLabel2);
@@ -158,7 +161,26 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        cerrar();
+        if(nombreRegistroCivilTextField.getText().isEmpty() | passwordFieldRegistroCivil.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Field empty.");
+        }
+        else {
+            String nombre = nombreRegistroCivilTextField.getText();
+            int cedula = Integer.parseInt(passwordFieldRegistroCivil.getText());
+            Persona admin = MetodosRegistroCivil.getInstance().buscarAdministrador(nombre);
+            if (admin == null) {
+                JOptionPane.showMessageDialog(rootPane, "Adminstrados no encontrado");
+            }
+            else{
+                if(admin.cedula == cedula){
+                    MetodosRegistroCivil.getInstance().setAdminLogueado(admin);
+                    VentanaRegistroCivil vRegistroCivil = new VentanaRegistroCivil();
+                    vRegistroCivil.setVisible(true);
+                    this.dispose();
+                }
+            }
+
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -205,8 +227,8 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nombreRegistroCivilTextField;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPasswordField passwordFieldRegistroCivil;
     // End of variables declaration//GEN-END:variables
 }

@@ -43,17 +43,12 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1000, 700));
@@ -121,117 +116,77 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelPrincipal.setLayout(null);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user.png"))); // NOI18N
-        panelPrincipal.add(jLabel3);
-        jLabel3.setBounds(120, 10, 110, 110);
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel15.setText("Numero de Cedula");
-        panelPrincipal.add(jLabel15);
-        jLabel15.setBounds(20, 370, 210, 40);
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel26.setText("Partido Politico");
-        panelPrincipal.add(jLabel26);
-        jLabel26.setBounds(20, 160, 250, 40);
-
-        jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel27.setText("Tipo");
-        panelPrincipal.add(jLabel27);
-        jLabel27.setBounds(20, 230, 230, 40);
-
-        jButton7.setBackground(new java.awt.Color(0, 0, 82));
-        jButton7.setForeground(new java.awt.Color(0, 0, 82));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton7);
-        jButton7.setBounds(290, 160, 50, 50);
+        jLabel26.setText("Provincia");
 
         jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel28.setText("Fotografia");
-        panelPrincipal.add(jLabel28);
-        jLabel28.setBounds(20, 300, 270, 40);
-
-        jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel29.setText("Plan de Gobierno");
-        panelPrincipal.add(jLabel29);
-        jLabel29.setBounds(10, 450, 250, 40);
+        jLabel28.setText("Tipo");
 
         jLabel30.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel30.setText("Curriculum");
-        panelPrincipal.add(jLabel30);
-        jLabel30.setBounds(10, 520, 280, 40);
+        jLabel30.setText("Posicion");
 
-        jButton16.setBackground(new java.awt.Color(0, 0, 82));
-        jButton16.setForeground(new java.awt.Color(0, 0, 82));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton16);
-        jButton16.setBounds(450, 230, 50, 50);
+        jComboBox2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propietario", "Suplente" }));
 
-        jButton17.setBackground(new java.awt.Color(0, 0, 82));
-        jButton17.setForeground(new java.awt.Color(0, 0, 82));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton17.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton17);
-        jButton17.setBounds(290, 300, 50, 50);
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setText("#");
 
-        jButton18.setBackground(new java.awt.Color(0, 0, 82));
-        jButton18.setForeground(new java.awt.Color(0, 0, 82));
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton18);
-        jButton18.setBounds(290, 370, 50, 50);
-
-        jButton19.setBackground(new java.awt.Color(0, 0, 82));
-        jButton19.setForeground(new java.awt.Color(0, 0, 82));
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton19);
-        jButton19.setBounds(290, 440, 50, 50);
-
-        jButton20.setBackground(new java.awt.Color(0, 0, 82));
-        jButton20.setForeground(new java.awt.Color(0, 0, 82));
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
-        jButton20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
-            }
-        });
-        panelPrincipal.add(jButton20);
-        jButton20.setBounds(290, 510, 50, 50);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presidente", "Visepresidente 1 ", "Visepresidente 2" }));
-        panelPrincipal.add(jComboBox1);
-        jComboBox1.setBounds(290, 230, 120, 30);
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);
@@ -245,7 +200,7 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
             navBar = false;                 //it change the NavBar 2 status
             } 
         else{ //if navBar is close
-            panelPrincipal.setSize(650,700);//the panel for new game will change to Open
+            panelPrincipal.setSize(500,700);//the panel for new game will change to Open
             navBar = true;                    // it change the NavBar 2 status
            
         }
@@ -260,30 +215,6 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
         vElecciones.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
-
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
         ventanaElecciones.setVisible(true);
@@ -292,28 +223,23 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }
