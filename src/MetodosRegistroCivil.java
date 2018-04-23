@@ -18,6 +18,7 @@ public class MetodosRegistroCivil {
     public ArrayList<Canton> listaCantones;                // lista de todos los cantones registrados en el sistema
     public ArrayList<Distrito> listaDistritos;             // lista de todos los distritos registrados en el sistema
     public ArrayList<Localidad> listaLocalidades;          // lista de todas las localidades registradas en el sistema
+    public ArrayList<PartidoPolitico> listaPartidosPoliticos; // lista de partidos politicos registrados en el sistema
     public ArrayList<Consulado> listaConsulados;           // lista de todos los consulados registrados en el sistema
     public static MetodosRegistroCivil instance = null;    // unico objeto de la clase MetodosRegistroCivil (singleton)
     public ArrayList<Persona> listaAdministradores = new ArrayList<>(100);
@@ -32,6 +33,7 @@ public class MetodosRegistroCivil {
         this.listaDistritos = new ArrayList<Distrito>();            // lista distritos
         this.listaLocalidades = new ArrayList<Localidad>();         // lista localidades
         this.listaConsulados = new ArrayList<Consulado>();          // lista consulados
+        this.listaPartidosPoliticos = new ArrayList<PartidoPolitico>();
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -95,8 +97,9 @@ public class MetodosRegistroCivil {
         return null;
     }
     
+    //metodo para buscar una localidad por su nombre en la lista de localidades
     public Localidad buscarLocalidad(String name){
-        for (int i = 0; i < listaLocalidades.size(); i++){
+        for (int i = 0; i < listaLocalidades.size(); i++){  //busqueda secuencial
             if(listaLocalidades.get(i).nombre.equals(name)){
                 return listaLocalidades.get(i);
             }
@@ -113,6 +116,8 @@ public class MetodosRegistroCivil {
         }
         return null;
     }
+    
+    //metodo para buscar un administrador por su nombre en la lista de administradores
     public Persona buscarAdministrador(String nombre){
         for(int i = 0; i < listaAdministradores.size(); i++){
             if(listaAdministradores.get(i).nombre.equals(nombre)){
@@ -122,6 +127,8 @@ public class MetodosRegistroCivil {
         return null;
     }
     
+    
+    //metodo para eliminar una persona de la lista de empadronados
     public boolean eliminarPersonaEmpadronada(int cedula){
         for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){  //busqueda secuencial
             if(listaPersonasEmpadronadas.get(i).cedula == cedula){
@@ -133,10 +140,24 @@ public class MetodosRegistroCivil {
         return false;
         
     }
-
-
     
-    // set y get de admin logueado
+    
+    //metodo para modificar los datos de un usuario y los recibe por parámetros
+    public void modificarPersonaNacional(int ID , String nuevoNombre, String nuevoApellido1, String nuevoApellido2, int nuevaEdad, int nuevaCedula, String nuevoEstadoCivil, String nuevaFechaNacimiento, String nuevoSexo, String nuevoLugarNacimiento, String nuevaNacionalidad, boolean nuevoFallecido, String nuevoDomicilioElectoral){
+        Persona aux = buscarPersonaEmpadronada(ID);
+        aux.setNombre(nuevoNombre);
+        aux.setPrimerApellido(nuevoApellido1);
+        aux.setSegundoApellido(nuevoApellido2);
+        aux.setEdad(nuevaEdad);
+        aux.setCedula(nuevaCedula);
+        aux.setEstadoCivil(nuevoEstadoCivil);
+        aux.setFechaNacimiento(nuevaFechaNacimiento);
+        aux.setSexo(nuevoSexo);
+        aux.setLugarNacimiento(nuevoLugarNacimiento);
+        aux.setNacionalidad(nuevaNacionalidad);
+        aux.setFallecido(nuevoFallecido);
+        aux.setDomicilioElectoral(nuevoDomicilioElectoral);
+    }
 
     public Persona getAdminLogueado() {
         return adminLogueado;

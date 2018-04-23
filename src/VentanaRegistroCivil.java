@@ -42,6 +42,10 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -58,9 +62,9 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Eliminar Persona");
+        jLabel2.setText("Editar Persona");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(20, 320, 230, 40);
+        jLabel2.setBounds(40, 370, 200, 40);
 
         jButton5.setBackground(new java.awt.Color(0, 0, 82));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/back.png"))); // NOI18N
@@ -71,13 +75,13 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton5);
-        jButton5.setBounds(280, 600, 40, 40);
+        jButton5.setBounds(280, 610, 40, 40);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Menu Principal");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 600, 190, 40);
+        jLabel5.setBounds(20, 610, 190, 40);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 82));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -88,13 +92,13 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(280, 240, 40, 40);
+        jButton2.setBounds(280, 230, 40, 40);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Agregar Zona");
+        jLabel4.setText("Agregar Partido Político");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 400, 180, 40);
+        jLabel4.setBounds(10, 510, 270, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 82));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -115,7 +119,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Agregar Extranjero");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(20, 240, 250, 40);
+        jLabel8.setBounds(20, 230, 250, 40);
 
         jButton6.setBackground(new java.awt.Color(0, 0, 82));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -126,7 +130,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton6);
-        jButton6.setBounds(280, 320, 40, 40);
+        jButton6.setBounds(280, 300, 40, 40);
 
         jButton8.setBackground(new java.awt.Color(0, 0, 82));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -137,13 +141,47 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton8);
-        jButton8.setBounds(280, 400, 40, 40);
+        jButton8.setBounds(280, 370, 40, 40);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Agregar Nacional");
         jPanel2.add(jLabel10);
         jLabel10.setBounds(20, 160, 250, 40);
+
+        jButton9.setBackground(new java.awt.Color(0, 0, 82));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton9);
+        jButton9.setBounds(280, 510, 40, 40);
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Eliminar Persona");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(20, 300, 230, 40);
+
+        jButton10.setBackground(new java.awt.Color(0, 0, 82));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton10);
+        jButton10.setBounds(280, 440, 40, 40);
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Agregar Zona");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(40, 440, 180, 40);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 350, 670);
@@ -182,8 +220,8 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        VentanaAgregarZona ventanaAgregarZona = new VentanaAgregarZona(this.ventanaPrincipal);
-        ventanaAgregarZona.setVisible(true);
+        VentanaModificarPersona ventanaModificar = new VentanaModificarPersona(this.ventanaPrincipal);
+        ventanaModificar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -192,6 +230,17 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         ventanaEliminarPersona.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        VentanaAgregarPartidoPolitico ventanaAgregarPartido = new VentanaAgregarPartidoPolitico(ventanaPrincipal);
+        ventanaAgregarPartido.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
         ventanaElecciones.setVisible(true);
@@ -201,16 +250,20 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
