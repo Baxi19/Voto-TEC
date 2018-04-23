@@ -67,12 +67,8 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
         TextFieldNacionalidad = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        labelLocalidad = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -165,7 +161,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         jLabel16.setText("Fecha nacimiento:");
         panelAgregaExtranjero.add(jLabel16);
-        jLabel16.setBounds(300, 40, 87, 14);
+        jLabel16.setBounds(300, 40, 87, 15);
 
         TextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,11 +197,11 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         jLabel17.setText("Sexo:");
         panelAgregaExtranjero.add(jLabel17);
-        jLabel17.setBounds(300, 100, 28, 14);
+        jLabel17.setBounds(300, 100, 28, 15);
 
         ComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         panelAgregaExtranjero.add(ComboBoxSexo);
-        ComboBoxSexo.setBounds(400, 100, 118, 20);
+        ComboBoxSexo.setBounds(400, 100, 118, 24);
 
         jLabel18.setText("Lugar de nacimiento:");
         panelAgregaExtranjero.add(jLabel18);
@@ -221,7 +217,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         jLabel19.setText("Nacionalidad:");
         panelAgregaExtranjero.add(jLabel19);
-        jLabel19.setBounds(300, 220, 64, 14);
+        jLabel19.setBounds(300, 220, 64, 15);
 
         TextFieldLugarNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +229,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         jLabel12.setText("Fallecido:");
         panelAgregaExtranjero.add(jLabel12);
-        jLabel12.setBounds(300, 300, 45, 14);
+        jLabel12.setBounds(300, 300, 45, 15);
 
         ComboBoxFallecido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
         panelAgregaExtranjero.add(ComboBoxFallecido);
@@ -243,7 +239,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         jLabel13.setText("Domicilio Electoral:");
         panelAgregaExtranjero.add(jLabel13);
-        jLabel13.setBounds(290, 370, 90, 14);
+        jLabel13.setBounds(290, 370, 90, 15);
 
         jButton6.setText("Agregar ");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -254,29 +250,18 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
         panelAgregaExtranjero.add(jButton6);
         jButton6.setBounds(810, 200, 100, 50);
 
-        jLabel31.setText("Localidad");
-        panelAgregaExtranjero.add(jLabel31);
-        jLabel31.setBounds(120, 540, 60, 20);
-
-        jButton8.setText("<");
-        panelAgregaExtranjero.add(jButton8);
-        jButton8.setBounds(60, 540, 40, 30);
+        labelLocalidad.setText("Localidad");
+        panelAgregaExtranjero.add(labelLocalidad);
+        labelLocalidad.setBounds(150, 430, 60, 20);
 
         jButton9.setText(">");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         panelAgregaExtranjero.add(jButton9);
-        jButton9.setBounds(200, 540, 40, 30);
-
-        jButton10.setText("<");
-        panelAgregaExtranjero.add(jButton10);
-        jButton10.setBounds(370, 540, 41, 30);
-
-        jButton11.setText(">");
-        panelAgregaExtranjero.add(jButton11);
-        jButton11.setBounds(550, 540, 40, 30);
-
-        jLabel33.setText("Consulado/País");
-        panelAgregaExtranjero.add(jLabel33);
-        jLabel33.setBounds(440, 540, 80, 14);
+        jButton9.setBounds(150, 460, 40, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/addList.png"))); // NOI18N
         panelAgregaExtranjero.add(jLabel1);
@@ -312,7 +297,32 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        cerrar();
+       if (TextFieldNombre.getText().isEmpty() | TextFieldPrimerApellido.getText().isEmpty() | TextFieldSegundoApellido.getText().isEmpty() | TextFieldEdad.getText().isEmpty() | TextFieldCedula.getText().isEmpty() | TextFieldEstadoCivil.getText().isEmpty() | TextFieldFechaNacimiento.getText().isEmpty() | TextFieldLugarNacimiento.getText().isEmpty() | TextFieldNacionalidad.getText().isEmpty() | labelLocalidad.getText().equals("Localidad")) {
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío");
+        } 
+        else if (MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(TextFieldCedula.getText())) != null) {
+            JOptionPane.showMessageDialog(rootPane, "Ya existe una persona con la cédula: " + TextFieldCedula.getText());
+        } 
+        else {
+            String n = TextFieldNombre.getText();
+            String a1 = TextFieldPrimerApellido.getText();
+            String a2 = TextFieldSegundoApellido.getText();
+            int e = Integer.parseInt(TextFieldEdad.getText());
+            int c = Integer.parseInt(TextFieldCedula.getText());
+            String ec = TextFieldEstadoCivil.getText();
+            String fn = TextFieldFechaNacimiento.getText();
+            String sex = ComboBoxSexo.getSelectedItem().toString();
+            String ln = TextFieldLugarNacimiento.getText();
+            String nc = TextFieldNacionalidad.getText();
+            boolean f = false;
+            if (ComboBoxFallecido.getSelectedItem().equals("Sí")) {
+                f = true;
+            }
+            String d = TextFieldDomicilioElectoral.getText();
+            Localidad localidad = MetodosRegistroCivil.getInstance().buscarLocalidad(labelLocalidad.getText());
+            MetodosRegistroCivil.getInstance().agregarExtranjeroAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, localidad);
+            JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " agregada con éxito al sistema.");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -377,7 +387,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
                 f = true;
             }
             String d = TextFieldDomicilioElectoral.getText();
-            //MetodosRegistroCivil.getInstance().agregarAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d);
+            //MetodosRegistroCivil.getInstance().agregarNacionalAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d);
             //nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral
 
         }
@@ -385,6 +395,10 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Ya existe una persona con la cédula: " + TextFieldCedula.getText());
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
     public void cerrar() {
         VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
         ventanaRegistro.setVisible(true);
@@ -405,13 +419,10 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldNombre;
     private javax.swing.JTextField TextFieldPrimerApellido;
     private javax.swing.JTextField TextFieldSegundoApellido;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -425,8 +436,6 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -434,6 +443,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel labelLocalidad;
     private javax.swing.JPanel panelAgregaExtranjero;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables

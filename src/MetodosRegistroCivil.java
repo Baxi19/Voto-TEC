@@ -20,9 +20,9 @@ public class MetodosRegistroCivil {
     public ArrayList<Localidad> listaLocalidades;          // lista de todas las localidades registradas en el sistema
     public ArrayList<Consulado> listaConsulados;           // lista de todos los consulados registrados en el sistema
     public static MetodosRegistroCivil instance = null;    // unico objeto de la clase MetodosRegistroCivil (singleton)
-    public ArrayList<Persona> listaAdministradores;
+    public ArrayList<Persona> listaAdministradores = new ArrayList<>(100);
     public Persona adminLogueado;
-                   
+    
     
     //constructor de la clase singleton de be ser privado para evitar nuevas instancias de este
     private MetodosRegistroCivil(){
@@ -32,12 +32,25 @@ public class MetodosRegistroCivil {
         this.listaDistritos = new ArrayList<Distrito>();            // lista distritos
         this.listaLocalidades = new ArrayList<Localidad>();         // lista localidades
         this.listaConsulados = new ArrayList<Consulado>();          // lista consulados
-        //setAdministradores();
+    }
+
+    public ArrayList<Persona> getListaAdministradores() {
+        return listaAdministradores;
+    }
+
+    public void setListaAdministradores(ArrayList<Persona> listaAdministradores) {
+        this.listaAdministradores = listaAdministradores;
     }
     
     //este metodo instancia una nueva persona por medio de los atributos recibidos por parámetros
-    public String agregarAlRegistro(String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral, Distrito distrito, Canton canton, Provincia provincia){
-        PersonaNacional nuevaPersona = new PersonaNacional(distrito, canton, provincia, nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
+    public String agregarNacionalAlRegistro(String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral, Distrito distrito){
+        PersonaNacional nuevaPersona = new PersonaNacional(distrito, nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
+        listaPersonasEmpadronadas.add(nuevaPersona);         //agrega la persona a la lista
+        return "Usuario agregado a la lista de empadronado"; 
+    }
+    
+    public String agregarExtranjeroAlRegistro(String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral, Localidad localidad){
+        PersonaExtranjera nuevaPersona = new PersonaExtranjera(localidad, nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
         listaPersonasEmpadronadas.add(nuevaPersona);         //agrega la persona a la lista
         return "Usuario agregado a la lista de empadronado"; 
     }
@@ -82,6 +95,15 @@ public class MetodosRegistroCivil {
         return null;
     }
     
+    public Localidad buscarLocalidad(String name){
+        for (int i = 0; i < listaLocalidades.size(); i++){
+            if(listaLocalidades.get(i).nombre.equals(name)){
+                return listaLocalidades.get(i);
+            }
+        }
+        return null;
+    }
+    
     //metodos para buscar un consulado por su nombre en la lista de consulados registrados
     public Consulado buscarConsulado(String nombre) {
         for (int i = 0; i < listaConsulados.size(); i++) {
@@ -99,14 +121,21 @@ public class MetodosRegistroCivil {
         }
         return null;
     }
-
-
-    //metodo para retornar la clase singleton y si no existe la crea
-    public static MetodosRegistroCivil getInstance(){
-        if(instance == null)                             
-            instance = new MetodosRegistroCivil();
-        return instance;
+    
+    public boolean eliminarPersonaEmpadronada(int cedula){
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){  //busqueda secuencial
+            if(listaPersonasEmpadronadas.get(i).cedula == cedula){
+                Persona p = buscarPersonaEmpadronada(cedula);
+                listaPersonasEmpadronadas.remove(p);
+                return true;
+            }
+        }
+        return false;
+        
     }
+
+
+    
     // set y get de admin logueado
 
     public Persona getAdminLogueado() {
@@ -116,14 +145,15 @@ public class MetodosRegistroCivil {
     public void setAdminLogueado(Persona adminLogueado) {
         this.adminLogueado = adminLogueado;
     }
-    public void setAdministradores(){
-        Persona admin1 = new Persona("Administrador1", "", "", 0, 123, "Soltero", "", "m", "", "Costarricense", true, "");
-        Persona admin2 = new Persona("Administrador2", "", "", 0, 1234, "Soltero", "", "m", "", "Costarricense", true, "");
-        Persona admin3 = new Persona("Administrador3", "", "", 0, 12345, "Soltero", "", "m", "", "Costarricense", true, "");
-        
-        listaAdministradores.add(admin1);
-        listaAdministradores.add(admin2);
-        listaAdministradores.add(admin3);
+    
+    //metodo para retornar la clase singleton y si no existe la crea
+    public static MetodosRegistroCivil getInstance(){
+        if(instance == null)                             
+            instance = new MetodosRegistroCivil();
+        return instance;
     }
+
+    
+    
     
 }

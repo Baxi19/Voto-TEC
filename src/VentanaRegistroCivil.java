@@ -19,10 +19,6 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         initComponents();
     }
 
-    VentanaRegistroCivil() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
    
 
     /**
@@ -49,9 +45,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1000, 700));
         setMinimumSize(new java.awt.Dimension(1000, 700));
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);

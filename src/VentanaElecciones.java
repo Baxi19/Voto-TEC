@@ -16,11 +16,16 @@ public class VentanaElecciones extends javax.swing.JFrame {
     String periodo = "8 de mayo de 2018 al 8 de mayo de 2022)";
     String duracion = "3 de octubre de 2017 al 31 de enero de 2018";
     
+    Persona admin1 = new Persona("Administrador1", "", "", 0, 123, "Soltero", "", "m", "", "Costarricense", true, "");
+    Persona admin2 = new Persona("Administrador2", "", "", 0, 1234, "Soltero", "", "m", "", "Costarricense", true, "");
+    Persona admin3 = new Persona("Administrador3", "", "", 0, 12345, "Soltero", "", "m", "", "Costarricense", true, ""); 
+    
     /**
      * Creates new form VentanaElecciones
      */
     public VentanaElecciones() {
         initComponents();
+        cargarAdministradores();
     }
 
 
@@ -397,4 +402,14 @@ public class VentanaElecciones extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    public void cargarAdministradores() {
+        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin1);
+        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin2);
+        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin3);
+        for (int i = 0; i < MetodosRegistroCivil.getInstance().getListaAdministradores().size(); i++) {
+            System.out.println(MetodosRegistroCivil.getInstance().listaAdministradores.get(i).nombre);
+        }
+
+    }
 }

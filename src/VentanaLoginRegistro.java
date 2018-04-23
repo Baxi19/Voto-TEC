@@ -174,12 +174,11 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
             else{
                 if(admin.cedula == cedula){
                     MetodosRegistroCivil.getInstance().setAdminLogueado(admin);
-                    VentanaRegistroCivil vRegistroCivil = new VentanaRegistroCivil();
+                    VentanaRegistroCivil vRegistroCivil = new VentanaRegistroCivil(this.ventanaPrincipal);
                     vRegistroCivil.setVisible(true);
                     this.dispose();
                 }
             }
-
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -206,12 +205,7 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
         vElecciones.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-    public void cerrar() {
-        VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
-        ventanaRegistro.setVisible(true);
-        this.dispose();
-    }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

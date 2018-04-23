@@ -10,14 +10,10 @@
  */
 public class PersonaNacional extends Persona{
     public Distrito distrito;
-    public Canton canton;
-    public Provincia provincia;
 
-    public PersonaNacional(Distrito distrito, Canton canton, Provincia provincia, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
+    public PersonaNacional(Distrito distrito, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
         super(nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
         this.distrito = distrito;
-        this.canton = canton;
-        this.provincia = provincia;
     }
 
     public Distrito getDistrito() {
@@ -26,22 +22,6 @@ public class PersonaNacional extends Persona{
 
     public void setDistrito(Distrito distrito) {
         this.distrito = distrito;
-    }
-
-    public Canton getCanton() {
-        return canton;
-    }
-
-    public void setCanton(Canton canton) {
-        this.canton = canton;
-    }
-
-    public Provincia getProvincia() {
-        return provincia;
-    }
-
-    public void setProvincia(Provincia provincia) {
-        this.provincia = provincia;
     }
 
     @Override

@@ -10,12 +10,11 @@
  */
 public class PersonaExtranjera extends Persona{
     public Localidad localidad;
-    public Consulado consulado;
 
-    public PersonaExtranjera(Localidad localidad, Consulado consulado, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
+
+    public PersonaExtranjera(Localidad localidad, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
         super(nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
         this.localidad = localidad;
-        this.consulado = consulado;
     }
 
     public Localidad getLocalidad() {
@@ -26,14 +25,7 @@ public class PersonaExtranjera extends Persona{
         this.localidad = localidad;
     }
 
-    public Consulado getConsulado() {
-        return consulado;
-    }
-
-    public void setConsulado(Consulado consulado) {
-        this.consulado = consulado;
-    }
-
+   
     @Override
     public String getNombre() {
         return nombre;
