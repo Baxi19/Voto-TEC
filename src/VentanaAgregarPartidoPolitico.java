@@ -1,5 +1,11 @@
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -58,6 +64,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        imagenIcono = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -148,29 +155,29 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
 
         jLabel7.setText("Código:");
         panelPrincipal.add(jLabel7);
-        jLabel7.setBounds(130, 170, 50, 15);
+        jLabel7.setBounds(130, 170, 50, 14);
         panelPrincipal.add(jTextField2);
         jTextField2.setBounds(240, 160, 140, 30);
 
         jLabel8.setText("Escala: ");
         panelPrincipal.add(jLabel8);
-        jLabel8.setBounds(130, 210, 60, 15);
+        jLabel8.setBounds(130, 210, 60, 14);
 
         jLabel9.setText("Fecha de fundación:");
         panelPrincipal.add(jLabel9);
-        jLabel9.setBounds(90, 250, 100, 15);
+        jLabel9.setBounds(90, 250, 100, 14);
         panelPrincipal.add(jTextField4);
         jTextField4.setBounds(240, 240, 140, 30);
 
         jLabel11.setText("Teléfono:");
         panelPrincipal.add(jLabel11);
-        jLabel11.setBounds(120, 290, 60, 15);
+        jLabel11.setBounds(120, 290, 60, 14);
         panelPrincipal.add(jTextField5);
         jTextField5.setBounds(240, 280, 140, 30);
 
         jLabel14.setText("Dirección:");
         panelPrincipal.add(jLabel14);
-        jLabel14.setBounds(120, 330, 70, 15);
+        jLabel14.setBounds(120, 330, 70, 14);
         panelPrincipal.add(jTextField6);
         jTextField6.setBounds(240, 320, 140, 30);
 
@@ -193,6 +200,12 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
         panelPrincipal.add(jComboBox1);
         jComboBox1.setBounds(240, 200, 140, 30);
 
+        imagenIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imagenIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user.png"))); // NOI18N
+        imagenIcono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panelPrincipal.add(imagenIcono);
+        imagenIcono.setBounds(420, 140, 190, 130);
+
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);
 
@@ -208,7 +221,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        cerrar();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -247,18 +260,42 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
             String fechaFundacionP = jTextField4.getText();
             int telefonoP = Integer.parseInt(jTextField5.getText());
             String direccionP = jTextField4.getText();
-            //PartidoPolitico nuevoPartidoPolitico = new PartidoPolitico(nombreP, codigoP, escalaP, fechaFundacionP, telefonoP, direccionP, banderaP);
-            //MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(nuevoPartidoPolitico);
+            File fichero = null;
+            ImageIcon bandera = (ImageIcon) selecionarImagen(fichero);
+            PartidoPolitico nuevoPartidoPolitico = new PartidoPolitico(nombreP, codigoP, escalaP, fechaFundacionP, telefonoP, direccionP, bandera);
+            MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(nuevoPartidoPolitico);
+            JOptionPane.showMessageDialog(rootPane, "Partido agregado exitosamente");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-    public void cerrar() {
-        VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
-        ventanaRegistro.setVisible(true);
-        this.dispose();
+    
+    public Icon selecionarImagen(File fichero){
+        int resultado ;
+        VentanaCargarArchivos ventana = new VentanaCargarArchivos();
+        FileNameExtensionFilter filtro1 = new FileNameExtensionFilter("Fotos, JPG y PNG", "jpn","png");
+        ventana.jFileCargarFoto.setFileFilter(filtro1);
+        resultado = ventana.jFileCargarFoto.showOpenDialog(null);
+        if(JFileChooser.APPROVE_OPTION == resultado){
+            //guardar el archivo selecionado
+            fichero = ventana.jFileCargarFoto.getSelectedFile();
+            try {
+                ImageIcon icon = new ImageIcon(fichero.toString());
+                //ajustar el tamaño de la imagen que se ha cargado
+                Icon icono = new ImageIcon(icon.getImage().getScaledInstance(imagenIcono.getWidth(), imagenIcono.getHeight(), Image.SCALE_DEFAULT));
+                //borrar TEXTO en label
+                imagenIcono.setText(null);
+                //mostrar imagen en label
+                imagenIcono.setIcon(icono);
+                return icono;
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null,"Error al abrir la imagen " + ex);
+            }
+        }
+        return null;
     }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imagenIcono;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
