@@ -1,4 +1,5 @@
 
+import javax.swing.JOptionPane;
 import sun.net.www.content.image.jpeg;
 
 /*
@@ -22,6 +23,7 @@ public class VentanaElecciones extends javax.swing.JFrame {
         initComponents();
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +33,6 @@ public class VentanaElecciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -39,20 +40,31 @@ public class VentanaElecciones extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1041, 558));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(1000, 700));
+        setMinimumSize(new java.awt.Dimension(1000, 700));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         getContentPane().setLayout(null);
-
-        jLabel1.setText("Tribunal Supremo de Elecciones");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(342, 12, 154, 15);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
 
@@ -116,56 +128,210 @@ public class VentanaElecciones extends javax.swing.JFrame {
         jPanel1.setBounds(0, 0, 0, 0);
         jPanel1.getAccessibleContext().setAccessibleName("");
 
-        jButton1.setText("Ir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.setBackground(new java.awt.Color(0, 0, 82));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Consultar resultados");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(20, 370, 230, 40);
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 82));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(180, 110, 40, 25);
+        jPanel2.add(jButton5);
+        jButton5.setBounds(280, 540, 40, 40);
 
-        jLabel4.setText("Ir a votar");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(100, 120, 50, 15);
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Registro Civil");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(20, 280, 180, 40);
 
-        jLabel5.setText("Ir al registro civil");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 170, 90, 15);
-
-        jButton2.setText("Ir");
+        jButton2.setBackground(new java.awt.Color(0, 0, 82));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(180, 160, 40, 25);
+        jPanel2.add(jButton2);
+        jButton2.setBounds(280, 270, 40, 40);
 
-        jLabel2.setText("Consultar resultados");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 220, 110, 15);
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Candidatura Diputado");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(20, 540, 260, 40);
 
-        jButton5.setText("Ir");
-        getContentPane().add(jButton5);
-        jButton5.setBounds(180, 210, 40, 25);
+        jButton1.setBackground(new java.awt.Color(0, 0, 82));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(280, 190, 40, 40);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eleciones.png"))); // NOI18N
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(120, 20, 130, 120);
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Votar");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(20, 190, 90, 40);
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 82));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(280, 360, 40, 40);
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Candidatura Presidente");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(20, 450, 260, 40);
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 82));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7);
+        jButton7.setBounds(280, 450, 40, 40);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 350, 680);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tse.png"))); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel10.setText("Randald Villegas B");
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel11.setText("Fabian Zamora R");
+
+        jButton8.setBackground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/shut.png"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 82));
+        jLabel12.setText("Salir");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
+                .addGap(34, 34, 34))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+        );
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(350, 0, 670, 670);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jPanel1.setSize(1041, 558);
+        //jPanel1.setSize(1041, 558);
+        VentanaLoginVotar ventanaLogin = new VentanaLoginVotar(this);
+        ventanaLogin.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        VentanaLoginRegistro vLogin = new VentanaLoginRegistro(this); // se envian metodos al otro frame
+        vLogin.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jPanel1.setSize(0,0);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        VentanaConsultarResultado vConsultas = new VentanaConsultarResultado(this); // se envian metodos al otro frame
+        vConsultas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        VentanaLoginCandidaturaPresidente vLoginCandidaturaPresidente = new VentanaLoginCandidaturaPresidente(this); // se envian metodos al otro frame
+        vLoginCandidaturaPresidente.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        VentanaLoginCandidaturaDiputado vLoginCandidaturaDiputado = new VentanaLoginCandidaturaDiputado(this); // se envian metodos al otro frame
+        vLoginCandidaturaDiputado.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Gracias por usar este Programa");
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,7 +363,9 @@ public class VentanaElecciones extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaElecciones().setVisible(true);
+                VentanaElecciones vElecciones =new VentanaElecciones();
+                vElecciones.setVisible(true);
+        
             }
         });
     }
@@ -208,13 +376,24 @@ public class VentanaElecciones extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
