@@ -48,49 +48,47 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        codigoProvinciaTextField = new javax.swing.JTextField();
         jButton24 = new javax.swing.JButton();
         nombreProvinciaTextField = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
+        codigoProvinciaTextField = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         consuladoLabel = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
-        codigoLocalidadTextField = new javax.swing.JTextField();
         nombreLocalidadTextField = new javax.swing.JTextField();
         jButton20 = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        codigoLocalidadTextField = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         nombreDistritoTextField = new javax.swing.JTextField();
-        codigoDistritoTextField = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
         cantonLabel = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
         jButton18 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
+        codigoDistritoTextField = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        codigoConsuladoTextField = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
         nombreConsuladoTextField = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
+        codigoConsuladoTextField = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         provinciaLabel = new javax.swing.JLabel();
-        jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
-        codigoCantonTextField = new javax.swing.JTextField();
         nombreCantonTextField = new javax.swing.JTextField();
         jButton23 = new javax.swing.JButton();
         jLabel47 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        codigoCantonTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -160,19 +158,11 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
 
         jLabel51.setText("Código:");
         jPanel8.add(jLabel51);
-        jLabel51.setBounds(20, 40, 60, 20);
+        jLabel51.setBounds(20, 100, 40, 30);
 
         jLabel52.setText("Nombre:");
         jPanel8.add(jLabel52);
-        jLabel52.setBounds(20, 80, 41, 14);
-
-        codigoProvinciaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoProvinciaTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel8.add(codigoProvinciaTextField);
-        codigoProvinciaTextField.setBounds(80, 30, 100, 30);
+        jLabel52.setBounds(10, 50, 50, 30);
 
         jButton24.setText("Agregar provincia");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +171,7 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButton24);
-        jButton24.setBounds(60, 110, 120, 30);
+        jButton24.setBounds(10, 160, 180, 30);
 
         nombreProvinciaTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,38 +179,37 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel8.add(nombreProvinciaTextField);
-        nombreProvinciaTextField.setBounds(80, 70, 100, 30);
+        nombreProvinciaTextField.setBounds(70, 50, 120, 30);
 
         jLabel37.setText("Agregar Provincia");
         jPanel8.add(jLabel37);
-        jLabel37.setBounds(30, 10, 100, 14);
+        jLabel37.setBounds(60, 0, 120, 15);
+
+        codigoProvinciaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoProvinciaTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel8.add(codigoProvinciaTextField);
+        codigoProvinciaTextField.setBounds(70, 100, 120, 30);
 
         panelPrincipal.add(jPanel8);
-        jPanel8.setBounds(50, 240, 210, 160);
+        jPanel8.setBounds(70, 240, 200, 200);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setLayout(null);
 
         jLabel41.setText("Código:");
         jPanel4.add(jLabel41);
-        jLabel41.setBounds(10, 20, 60, 20);
+        jLabel41.setBounds(20, 60, 40, 30);
 
         jLabel43.setText("Nombre:");
         jPanel4.add(jLabel43);
-        jLabel43.setBounds(10, 50, 41, 14);
+        jLabel43.setBounds(20, 20, 40, 30);
 
         consuladoLabel.setText("Consulado");
         jPanel4.add(consuladoLabel);
-        consuladoLabel.setBounds(70, 80, 60, 30);
-
-        jButton15.setText("<");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton15);
-        jButton15.setBounds(0, 80, 50, 23);
+        consuladoLabel.setBounds(60, 120, 130, 30);
 
         jButton16.setText(">");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -229,11 +218,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton16);
-        jButton16.setBounds(150, 80, 40, 23);
-        jPanel4.add(codigoLocalidadTextField);
-        codigoLocalidadTextField.setBounds(60, 20, 90, 20);
+        jButton16.setBounds(10, 130, 40, 25);
         jPanel4.add(nombreLocalidadTextField);
-        nombreLocalidadTextField.setBounds(60, 50, 90, 20);
+        nombreLocalidadTextField.setBounds(70, 20, 120, 30);
 
         jButton20.setText("Agregar Localida");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -242,29 +229,39 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton20);
-        jButton20.setBounds(30, 120, 120, 23);
+        jButton20.setBounds(10, 160, 180, 30);
 
         jLabel38.setText("Agregar Localidad");
         jPanel4.add(jLabel38);
-        jLabel38.setBounds(30, 0, 100, 14);
+        jLabel38.setBounds(50, 0, 100, 15);
+
+        jLabel6.setText("Seleccione consulado:");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(10, 100, 120, 15);
+
+        codigoLocalidadTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoLocalidadTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel4.add(codigoLocalidadTextField);
+        codigoLocalidadTextField.setBounds(70, 60, 120, 30);
 
         panelPrincipal.add(jPanel4);
-        jPanel4.setBounds(310, 40, 210, 160);
+        jPanel4.setBounds(290, 20, 200, 200);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setLayout(null);
 
-        jLabel45.setText("Código:");
+        jLabel45.setText("Código :");
         jPanel5.add(jLabel45);
-        jLabel45.setBounds(10, 20, 60, 20);
+        jLabel45.setBounds(20, 70, 40, 30);
 
-        jLabel46.setText("Nombre:");
+        jLabel46.setText("Nombre :");
         jPanel5.add(jLabel46);
-        jLabel46.setBounds(10, 50, 50, 20);
+        jLabel46.setBounds(10, 30, 50, 30);
         jPanel5.add(nombreDistritoTextField);
-        nombreDistritoTextField.setBounds(60, 50, 90, 20);
-        jPanel5.add(codigoDistritoTextField);
-        codigoDistritoTextField.setBounds(60, 20, 90, 20);
+        nombreDistritoTextField.setBounds(70, 30, 120, 30);
 
         jButton17.setText(">");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -273,24 +270,15 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel5.add(jButton17);
-        jButton17.setBounds(160, 90, 50, 23);
+        jButton17.setBounds(10, 130, 40, 25);
 
         cantonLabel.setText("Cantón");
         jPanel5.add(cantonLabel);
-        cantonLabel.setBounds(60, 90, 110, 30);
+        cantonLabel.setBounds(60, 130, 130, 30);
 
-        jButton19.setText("<");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jButton19);
-        jButton19.setBounds(0, 90, 50, 23);
-
-        jLabel50.setText("Seleccione Cantón");
+        jLabel50.setText("Seleccione Cantón:");
         jPanel5.add(jLabel50);
-        jLabel50.setBounds(60, 80, 100, 20);
+        jLabel50.setBounds(10, 110, 100, 20);
 
         jButton18.setText("Agregar Distrito");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -299,27 +287,27 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel5.add(jButton18);
-        jButton18.setBounds(50, 120, 120, 30);
+        jButton18.setBounds(10, 160, 180, 30);
 
         jLabel35.setText("Agregar Distrito");
         jPanel5.add(jLabel35);
-        jLabel35.setBounds(50, -6, 90, 30);
+        jLabel35.setBounds(60, 0, 90, 20);
+        jPanel5.add(codigoDistritoTextField);
+        codigoDistritoTextField.setBounds(70, 70, 120, 30);
 
         panelPrincipal.add(jPanel5);
-        jPanel5.setBounds(190, 460, 210, 160);
+        jPanel5.setBounds(70, 460, 200, 200);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel6.setLayout(null);
 
         jLabel40.setText("Código:");
         jPanel6.add(jLabel40);
-        jLabel40.setBounds(20, 40, 50, 20);
+        jLabel40.setBounds(10, 100, 50, 30);
 
         jLabel42.setText("Nombre:");
         jPanel6.add(jLabel42);
-        jLabel42.setBounds(20, 90, 41, 14);
-        jPanel6.add(codigoConsuladoTextField);
-        codigoConsuladoTextField.setBounds(80, 40, 90, 20);
+        jLabel42.setBounds(10, 50, 40, 30);
 
         jButton14.setText("Agregar Consulado");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -328,40 +316,33 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jButton14);
-        jButton14.setBounds(50, 120, 130, 23);
+        jButton14.setBounds(20, 160, 170, 30);
         jPanel6.add(nombreConsuladoTextField);
-        nombreConsuladoTextField.setBounds(80, 80, 90, 20);
+        nombreConsuladoTextField.setBounds(60, 50, 130, 30);
 
         jLabel39.setText("Agregar Consulado/País");
         jPanel6.add(jLabel39);
-        jLabel39.setBounds(30, 0, 160, 14);
+        jLabel39.setBounds(30, 0, 160, 15);
+        jPanel6.add(codigoConsuladoTextField);
+        codigoConsuladoTextField.setBounds(60, 100, 130, 30);
 
         panelPrincipal.add(jPanel6);
-        jPanel6.setBounds(50, 40, 210, 160);
+        jPanel6.setBounds(70, 20, 200, 200);
 
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel7.setLayout(null);
 
         jLabel48.setText("Código:");
         jPanel7.add(jLabel48);
-        jLabel48.setBounds(10, 10, 50, 20);
+        jLabel48.setBounds(20, 70, 50, 30);
 
         jLabel49.setText("Nombre:");
         jPanel7.add(jLabel49);
-        jLabel49.setBounds(10, 50, 41, 14);
+        jLabel49.setBounds(20, 30, 40, 30);
 
         provinciaLabel.setText("Provincia");
         jPanel7.add(provinciaLabel);
-        provinciaLabel.setBounds(40, 100, 90, 30);
-
-        jButton21.setText("<");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton21);
-        jButton21.setBounds(0, 100, 40, 23);
+        provinciaLabel.setBounds(60, 130, 130, 30);
 
         jButton22.setText(">");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -370,17 +351,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton22);
-        jButton22.setBounds(130, 100, 40, 23);
-
-        codigoCantonTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoCantonTextFieldActionPerformed(evt);
-            }
-        });
-        jPanel7.add(codigoCantonTextField);
-        codigoCantonTextField.setBounds(60, 20, 90, 20);
+        jButton22.setBounds(10, 130, 40, 25);
         jPanel7.add(nombreCantonTextField);
-        nombreCantonTextField.setBounds(60, 50, 90, 20);
+        nombreCantonTextField.setBounds(70, 30, 120, 30);
 
         jButton23.setText("Agregar Cantón");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -389,18 +362,26 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton23);
-        jButton23.setBounds(30, 130, 110, 20);
+        jButton23.setBounds(10, 160, 180, 30);
 
-        jLabel47.setText("Seleccione provincia");
+        jLabel47.setText("Seleccione provincia:");
         jPanel7.add(jLabel47);
-        jLabel47.setBounds(30, 80, 120, 14);
+        jLabel47.setBounds(10, 110, 120, 15);
 
         jLabel36.setText("Agregar Cantón");
         jPanel7.add(jLabel36);
-        jLabel36.setBounds(40, 0, 110, 14);
+        jLabel36.setBounds(60, 0, 110, 15);
+
+        codigoCantonTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoCantonTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel7.add(codigoCantonTextField);
+        codigoCantonTextField.setBounds(70, 70, 120, 30);
 
         panelPrincipal.add(jPanel7);
-        jPanel7.setBounds(310, 240, 210, 160);
+        jPanel7.setBounds(290, 240, 200, 200);
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);
@@ -440,18 +421,6 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-        String nombreConsulado = MetodosRegistroCivil.getInstance().listaConsulados.get(punteroConsulado).nombre;
-        consuladoLabel.setText(nombreConsulado);
-        if(punteroConsulado - 1 < 0){
-            punteroConsulado = MetodosRegistroCivil.getInstance().listaConsulados.size() - 1;
-        }
-        else{
-            punteroConsulado --;
-        }
-    }//GEN-LAST:event_jButton15ActionPerformed
-
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
         String nombreConsulado = MetodosRegistroCivil.getInstance().listaConsulados.get(punteroConsulado).nombre;
@@ -468,6 +437,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         if (codigoLocalidadTextField.getText().isEmpty() | nombreLocalidadTextField.getText().isEmpty() | consuladoLabel.getText().equals("Consulado")) {
             JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
         }
+        else if(MetodosRegistroCivil.getInstance().buscarLocalidad(nombreLocalidadTextField.getText()) != null){
+            JOptionPane.showMessageDialog(rootPane, "Ya existe una localidad con ese nombre.");
+        }
         else{
             int codigo = Integer.parseInt(codigoLocalidadTextField.getText());
             String nombre = nombreLocalidadTextField.getText();
@@ -475,6 +447,7 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             Consulado consulado = MetodosRegistroCivil.getInstance().buscarConsulado(nombreConsulado);
             Localidad nuevaLocalidad = new Localidad(codigo, nombre, consulado);
             MetodosRegistroCivil.getInstance().listaLocalidades.add(nuevaLocalidad);
+            JOptionPane.showMessageDialog(rootPane, "Localidad agregada con éxito al sistema.");
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
@@ -489,22 +462,10 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-        String nombreProvincia = MetodosRegistroCivil.getInstance().listaCantones.get(punteroCanton).nombre;
-        cantonLabel.setText(nombreProvincia);
-        if(punteroCanton - 1 < 0){
-            punteroCanton = MetodosRegistroCivil.getInstance().listaCantones.size() - 1;
-        }
-        else{
-            punteroCanton --;
-        }
-    }//GEN-LAST:event_jButton19ActionPerformed
-
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         // TODO add your handling code here:
-        if(codigoCantonTextField.getText().isEmpty() | nombreCantonTextField.getText().isEmpty() | provinciaLabel.getText().equals("Cantón")){
+        if(codigoDistritoTextField.getText().isEmpty() | nombreDistritoTextField.getText().isEmpty() | cantonLabel.getText().equals("Distrito")){
             JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
         }
         else{
@@ -524,6 +485,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         if (codigoConsuladoTextField.getText().isEmpty() | nombreConsuladoTextField.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
         }
+        else if(MetodosRegistroCivil.getInstance().buscarConsulado(nombreConsuladoTextField.getText()) != null){
+            JOptionPane.showMessageDialog(rootPane, "Ya existe un consulado con ese nombre.");
+        }
         else {
             int codigo = Integer.parseInt(codigoConsuladoTextField.getText());
             String nombre = nombreConsuladoTextField.getText();
@@ -531,20 +495,7 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             MetodosRegistroCivil.getInstance().listaConsulados.add(nuevoConsulado);
             JOptionPane.showMessageDialog(rootPane, "Consulado/País: " + nombre + " agregado con éxito al sistema.");
         }
-
     }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-        String nombreProvincia = MetodosRegistroCivil.getInstance().listaProvincias.get(punteroProvincia).nombre;
-        provinciaLabel.setText(nombreProvincia);
-        if(punteroProvincia - 1 < 0){
-            punteroProvincia = MetodosRegistroCivil.getInstance().listaProvincias.size() - 1;
-        }
-        else{
-            punteroProvincia --;
-        }
-    }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
@@ -567,11 +518,13 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         if(codigoCantonTextField.getText().isEmpty() | nombreCantonTextField.getText().isEmpty() | provinciaLabel.getText().equals("Provincia")){
             JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
         }
+        else if(MetodosRegistroCivil.getInstance().buscarCanton(nombreCantonTextField.getText()) != null){
+            JOptionPane.showMessageDialog(rootPane, "Ya existe un cantón con ese nombre.");
+        }
         else{
             int codigo = Integer.parseInt(codigoCantonTextField.getText());
             String nombre = nombreCantonTextField.getText();
-            String nombreProvincia = provinciaLabel.getText();
-            Provincia provincia = MetodosRegistroCivil.getInstance().buscarProvincia(nombreProvincia);
+            Provincia provincia = MetodosRegistroCivil.getInstance().buscarProvincia(provinciaLabel.getText());
             Canton nuevoCanton = new Canton(codigo, nombre, provincia);
             MetodosRegistroCivil.getInstance().listaCantones.add(nuevoCanton);
             JOptionPane.showMessageDialog(rootPane, "Cantón: " + nombre + " agregado con éxito al sistema.");
@@ -587,6 +540,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         if(codigoProvinciaTextField.getText().isEmpty() | nombreProvinciaTextField.getText().isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
         }
+        else if(MetodosRegistroCivil.getInstance().buscarProvincia(nombreProvinciaTextField.getText()) != null){
+            JOptionPane.showMessageDialog(rootPane, "Ya existe una provincia con ese nombre.");
+        }
         else{
             int codigo = Integer.parseInt(codigoProvinciaTextField.getText());
             String nombre = nombreProvinciaTextField.getText();
@@ -599,6 +555,10 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
     private void nombreProvinciaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvinciaTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreProvinciaTextFieldActionPerformed
+
+    private void codigoLocalidadTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoLocalidadTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoLocalidadTextFieldActionPerformed
     public void cerrar() {
         VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
         ventanaRegistro.setVisible(true);
@@ -615,14 +575,11 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
     private javax.swing.JTextField codigoProvinciaTextField;
     private javax.swing.JLabel consuladoLabel;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
@@ -650,6 +607,7 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

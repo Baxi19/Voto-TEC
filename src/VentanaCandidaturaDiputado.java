@@ -16,7 +16,8 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
     VentanaElecciones ventanaPrincipal;
     private boolean navBar = false;
     public static int punteroNombrePartido = 0;
-    public ArrayList<Persona> listaAuxCandidatosDiputado; 
+    public static int pos;
+    public ArrayList<Diputado> listaAuxCandidatosDiputado; 
     /**
      * Creates new form VentanaLogin
      */
@@ -51,16 +52,17 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jTextFieldCedula = new javax.swing.JTextField();
         jTextFieldProvincia = new javax.swing.JTextField();
         jComboBoxTipo = new javax.swing.JComboBox<>();
-        jLabelPosicion = new javax.swing.JLabel();
         bDone = new javax.swing.JButton();
         partidoNombre = new javax.swing.JLabel();
         bSiguiente = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        jTextFieldCedula1 = new javax.swing.JTextField();
+        posicionTextField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1000, 700));
@@ -137,36 +139,24 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel15.setText("Número de Cedula");
         panelPrincipal.add(jLabel15);
-        jLabel15.setBounds(20, 280, 210, 40);
+        jLabel15.setBounds(40, 170, 210, 40);
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel26.setText("Provincia");
         panelPrincipal.add(jLabel26);
-        jLabel26.setBounds(20, 190, 250, 30);
+        jLabel26.setBounds(40, 230, 130, 30);
 
         jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel28.setText("Tipo");
+        jLabel28.setText("Posición");
         panelPrincipal.add(jLabel28);
-        jLabel28.setBounds(30, 370, 140, 40);
-
-        jLabel30.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel30.setText("Posición");
-        panelPrincipal.add(jLabel30);
-        jLabel30.setBounds(20, 500, 130, 40);
-        panelPrincipal.add(jTextFieldCedula);
-        jTextFieldCedula.setBounds(290, 280, 130, 30);
+        jLabel28.setBounds(40, 330, 140, 40);
         panelPrincipal.add(jTextFieldProvincia);
-        jTextFieldProvincia.setBounds(290, 190, 130, 30);
+        jTextFieldProvincia.setBounds(260, 230, 130, 30);
 
         jComboBoxTipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propietario", "Suplente" }));
         panelPrincipal.add(jComboBoxTipo);
-        jComboBoxTipo.setBounds(290, 380, 130, 30);
-
-        jLabelPosicion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabelPosicion.setText("#");
-        panelPrincipal.add(jLabelPosicion);
-        jLabelPosicion.setBounds(300, 490, 120, 40);
+        jComboBoxTipo.setBounds(260, 280, 130, 30);
 
         bDone.setBackground(new java.awt.Color(255, 255, 255));
         bDone.setForeground(new java.awt.Color(0, 0, 82));
@@ -178,12 +168,12 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(bDone);
-        bDone.setBounds(570, 620, 55, 55);
+        bDone.setBounds(560, 640, 54, 54);
 
         partidoNombre.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         partidoNombre.setText("Nombre Partido");
         panelPrincipal.add(partidoNombre);
-        partidoNombre.setBounds(190, 10, 173, 29);
+        partidoNombre.setBounds(220, 30, 173, 29);
 
         bSiguiente.setBackground(new java.awt.Color(255, 255, 255));
         bSiguiente.setForeground(new java.awt.Color(0, 0, 82));
@@ -195,12 +185,12 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(bSiguiente);
-        bSiguiente.setBounds(290, 80, 55, 55);
+        bSiguiente.setBounds(280, 80, 54, 54);
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel19.setText("Partido Politico");
         panelPrincipal.add(jLabel19);
-        jLabel19.setBounds(20, 100, 166, 29);
+        jLabel19.setBounds(40, 100, 166, 29);
 
         jButton1.setText("Postular a diputado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +199,20 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton1);
-        jButton1.setBounds(290, 320, 130, 30);
+        jButton1.setBounds(260, 380, 130, 30);
+
+        jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel29.setText("Tipo");
+        panelPrincipal.add(jLabel29);
+        jLabel29.setBounds(40, 280, 140, 40);
+        panelPrincipal.add(jTextFieldCedula1);
+        jTextFieldCedula1.setBounds(260, 180, 130, 30);
+        panelPrincipal.add(posicionTextField);
+        posicionTextField.setBounds(260, 330, 130, 30);
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelPrincipal.add(jLabel1);
+        jLabel1.setBounds(20, 160, 410, 280);
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);
@@ -241,28 +244,17 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void bDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDoneActionPerformed
-        if(jTextFieldProvincia.getText().isEmpty() | jTextFieldCedula.getText().isEmpty()){
-            JOptionPane.showMessageDialog(rootPane, "Campo Vacio");
-        }
-        else{
-            PartidoPolitico partidoPolitico = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
-            
-            CandidaturaDiputado cDiputado = new CandidaturaDiputado( partidoPolitico, listaAuxCandidatosDiputado,  provincia,  tipo, posicion, admin);
-            /*Persona presidente = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombrePresidente.getText());
-            Persona vicePresidente1 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente1.getText());
-            Persona vicePresidente2 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente2.getText());
-            
-            if(presidente != null && vicePresidente1 != null && vicePresidente2 != null){
-                PartidoPolitico partidoPolitico = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
-                CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum);
-                MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);
-            }
-            else{
-                JOptionPane.showMessageDialog(rootPane, "Alguno o varios de los nombres digitados no existe en el sistema. ");
-            }
-
-        */
-        }
+       if(partidoNombre.getText().equals("Nombre Partido") | listaAuxCandidatosDiputado.size() < 6){
+           JOptionPane.showMessageDialog(rootPane, "Aun falta por escoger un partido político o la lista de diputados no está completa.");
+       }
+       else{
+           PartidoPolitico partidoDiputado = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
+           Persona admin = MetodosRegistroCivil.getInstance().adminLogueado;
+            CandidaturaDiputado nuevaCandidaturaDiputado = new CandidaturaDiputado(partidoDiputado, listaAuxCandidatosDiputado, admin);
+            MetodosRegistroCivil.getInstance().listaCandidaturasDiputado.add(nuevaCandidaturaDiputado);
+            JOptionPane.showMessageDialog(rootPane, "Candidatura registrada con éxito!");
+       }
+       
     }//GEN-LAST:event_bDoneActionPerformed
 
     private void bSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSiguienteActionPerformed
@@ -278,14 +270,23 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Persona diputado = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(jTextFieldCedula.getText()));
-        if (diputado != null){
-            listaAuxCandidatosDiputado.add(diputado);
+        if(jTextFieldCedula1.getText().isEmpty() | jTextFieldProvincia.getText().isEmpty() | posicionTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío");
         }
-        else{
-            JOptionPane.showMessageDialog(rootPane, "No se encuentra la persona que quiere postular como diputado.");
+        else {
+            Persona diputado = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(jTextFieldCedula1.getText()));
+            Provincia provincia = MetodosRegistroCivil.getInstance().buscarProvincia(jTextFieldProvincia.getText());
+            String tipo = jComboBoxTipo.getSelectedItem().toString();
+            int posicion = Integer.parseInt(posicionTextField.getText());
+            if (diputado != null | provincia != null) {
+                Diputado nuevoDiputado = new Diputado(diputado, provincia, tipo, posicion);
+                listaAuxCandidatosDiputado.add(nuevoDiputado);
+                JOptionPane.showMessageDialog(rootPane, "Diputado postulado con éxito.");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No se encuentra la persona que quiere postular como diputado.");
+            }
         }
-        
+
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -303,6 +304,7 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBoxTipo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel19;
@@ -310,15 +312,15 @@ public class VentanaCandidaturaDiputado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelPosicion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextFieldCedula;
+    private javax.swing.JTextField jTextFieldCedula1;
     private javax.swing.JTextField jTextFieldProvincia;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JLabel partidoNombre;
+    private javax.swing.JTextField posicionTextField;
     // End of variables declaration//GEN-END:variables
 }

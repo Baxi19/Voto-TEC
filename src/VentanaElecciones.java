@@ -16,16 +16,13 @@ public class VentanaElecciones extends javax.swing.JFrame {
     String periodo = "8 de mayo de 2018 al 8 de mayo de 2022)";
     String duracion = "3 de octubre de 2017 al 31 de enero de 2018";
     
-    Persona admin1 = new Persona("Administrador1", "", "", 0, 123, "Soltero", "", "m", "", "Costarricense", true, "");
-    Persona admin2 = new Persona("Administrador2", "", "", 0, 1234, "Soltero", "", "m", "", "Costarricense", true, "");
-    Persona admin3 = new Persona("Administrador3", "", "", 0, 12345, "Soltero", "", "m", "", "Costarricense", true, ""); 
     
     /**
      * Creates new form VentanaElecciones
      */
     public VentanaElecciones() {
         initComponents();
-        cargarAdministradores();
+
     }
 
 
@@ -338,43 +335,7 @@ public class VentanaElecciones extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaElecciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                VentanaElecciones vElecciones =new VentanaElecciones();
-                vElecciones.setVisible(true);
-        
-            }
-        });
-    }
-
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -403,13 +364,4 @@ public class VentanaElecciones extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
-    public void cargarAdministradores() {
-        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin1);
-        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin2);
-        MetodosRegistroCivil.getInstance().getListaAdministradores().add(admin3);
-        for (int i = 0; i < MetodosRegistroCivil.getInstance().getListaAdministradores().size(); i++) {
-            System.out.println(MetodosRegistroCivil.getInstance().listaAdministradores.get(i).nombre);
-        }
-
-    }
 }

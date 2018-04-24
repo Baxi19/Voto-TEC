@@ -412,8 +412,12 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
             Persona vicePresidente2 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente2.getText());
             if(presidente != null && vicePresidente1 != null && vicePresidente2 != null){
                 PartidoPolitico partidoPolitico = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
-                CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum);
+                Persona admin = MetodosRegistroCivil.getInstance().adminLogueado;
+                CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum, admin);
+                 System.out.println("Candidatura registrada por: " + cPresidente.admin.nombre);
                 MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);
+               
+                
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "Alguno o varios de los nombres digitados no existe en el sistema. ");
