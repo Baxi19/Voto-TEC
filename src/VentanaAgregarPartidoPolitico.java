@@ -65,6 +65,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         imagenIcono = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -175,9 +176,9 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
         panelPrincipal.add(jTextField5);
         jTextField5.setBounds(240, 280, 140, 30);
 
-        jLabel14.setText("Dirección:");
+        jLabel14.setText("Bandera");
         panelPrincipal.add(jLabel14);
-        jLabel14.setBounds(120, 330, 70, 14);
+        jLabel14.setBounds(120, 420, 70, 14);
         panelPrincipal.add(jTextField6);
         jTextField6.setBounds(240, 320, 140, 30);
 
@@ -194,17 +195,21 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton1);
-        jButton1.setBounds(240, 360, 140, 30);
+        jButton1.setBounds(240, 520, 140, 30);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Cantonal", "Provincial" }));
         panelPrincipal.add(jComboBox1);
         jComboBox1.setBounds(240, 200, 140, 30);
 
         imagenIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imagenIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user.png"))); // NOI18N
+        imagenIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/band.png"))); // NOI18N
         imagenIcono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelPrincipal.add(imagenIcono);
-        imagenIcono.setBounds(420, 140, 190, 130);
+        imagenIcono.setBounds(240, 360, 140, 130);
+
+        jLabel16.setText("Dirección:");
+        panelPrincipal.add(jLabel16);
+        jLabel16.setBounds(120, 330, 70, 14);
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);
@@ -307,6 +312,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

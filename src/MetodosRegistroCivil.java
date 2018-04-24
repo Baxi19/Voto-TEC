@@ -22,6 +22,8 @@ public class MetodosRegistroCivil {
     public ArrayList<Consulado> listaConsulados;           // lista de todos los consulados registrados en el sistema
     public static MetodosRegistroCivil instance = null;    // unico objeto de la clase MetodosRegistroCivil (singleton)
     public ArrayList<Persona> listaAdministradores = new ArrayList<>(100);
+    public ArrayList<CandidaturaPresidente> listaCandidaturasPresidente ;
+    public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;
     public Persona adminLogueado;
     
     
@@ -34,6 +36,8 @@ public class MetodosRegistroCivil {
         this.listaLocalidades = new ArrayList<Localidad>();         // lista localidades
         this.listaConsulados = new ArrayList<Consulado>();          // lista consulados
         this.listaPartidosPoliticos = new ArrayList<PartidoPolitico>();
+        this.listaCandidaturasDiputado = new ArrayList<CandidaturaDiputado>();
+        this.listaCandidaturasPresidente = new ArrayList<CandidaturaPresidente>();
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -57,10 +61,19 @@ public class MetodosRegistroCivil {
         return "Usuario agregado a la lista de empadronado"; 
     }
     
-    //método para buscar una persona en la lista de personas empadronadas
     public Persona buscarPersonaEmpadronada(int cedula){
         for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){  //busqueda secuencial
             if(listaPersonasEmpadronadas.get(i).cedula == cedula){
+                return listaPersonasEmpadronadas.get(i);
+            }
+        }
+        return null;
+    } 
+    
+    //método para buscar una persona en la lista de personas empadronadas
+    public Persona buscarPersonaEmpadronadaNombre(String nombre){
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){  //busqueda secuencial
+            if(listaPersonasEmpadronadas.get(i).nombre.equals(nombre)){
                 return listaPersonasEmpadronadas.get(i);
             }
         }
@@ -140,7 +153,15 @@ public class MetodosRegistroCivil {
         return false;
         
     }
-    
+    public CandidaturaPresidente buscarCandidaturaPresidente(String partido){
+        for (int i = 0; i < listaCandidaturasPresidente.size(); i++) {
+            if(listaCandidaturasPresidente.get(i).partidoPolitico.nombre.equals(partido)){
+                return listaCandidaturasPresidente.get(i);
+            }
+        }
+        
+        return null;
+    }
     
     //metodo para modificar los datos de un usuario y los recibe por parámetros
     public void modificarPersonaNacional(int ID , String nuevoNombre, String nuevoApellido1, String nuevoApellido2, int nuevaEdad, int nuevaCedula, String nuevoEstadoCivil, String nuevaFechaNacimiento, String nuevoSexo, String nuevoLugarNacimiento, String nuevaNacionalidad, boolean nuevoFallecido, String nuevoDomicilioElectoral){
@@ -173,7 +194,15 @@ public class MetodosRegistroCivil {
             instance = new MetodosRegistroCivil();
         return instance;
     }
-
+    //método para buscar una persona en la lista de personas empadronadas
+    public PartidoPolitico buscarPartidoPolitico(String nombre){
+        for(int i = 0; i < listaPartidosPoliticos.size(); i++){  //busqueda secuencial
+            if(listaPartidosPoliticos.get(i).nombre.equals(nombre)){
+                return listaPartidosPoliticos.get(i);
+            }
+        }
+        return null;
+    } 
     
     
     

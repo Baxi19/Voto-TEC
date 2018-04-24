@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
@@ -25,6 +27,10 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
     VentanaElecciones ventanaPrincipal;
     private boolean navBar = false;
     private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos pdf, word y web", "pdf","docx","URL");
+    private File plan;
+    private File curriculum;
+    private ImageIcon foto;
+    public static int punteroNombrePartido = 0;
     /**
      * Creates new form VentanaLogin
      */
@@ -53,22 +59,24 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         panelPrincipal = new javax.swing.JPanel();
         imagenIcono = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jLabelUsuarioRegistrado = new javax.swing.JLabel();
+        bSiguiente = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        bCargarFoto = new javax.swing.JButton();
+        bCurriculum = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton16 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
+        bPlanGobierno = new javax.swing.JButton();
+        partidoNombre = new javax.swing.JLabel();
+        jTextFieldNombrePresidente = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        bDone = new javax.swing.JButton();
+        jTextFieldNombreVisepresidente1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jTextFieldNombreVisepresidente2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -132,22 +140,19 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         imagenIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user.png"))); // NOI18N
         imagenIcono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel14.setText("Numero de Cedula");
-
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel19.setText("Partido Politico");
 
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel20.setText("Nombre");
+        jLabelUsuarioRegistrado.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabelUsuarioRegistrado.setText("Nombre");
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setForeground(new java.awt.Color(0, 0, 82));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/right.png"))); // NOI18N
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bSiguiente.setBackground(new java.awt.Color(255, 255, 255));
+        bSiguiente.setForeground(new java.awt.Color(0, 0, 82));
+        bSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/right.png"))); // NOI18N
+        bSiguiente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                bSiguienteActionPerformed(evt);
             }
         });
 
@@ -160,153 +165,168 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel25.setText("Usuario Registrado");
 
-        jButton12.setBackground(new java.awt.Color(255, 255, 255));
-        jButton12.setForeground(new java.awt.Color(0, 0, 82));
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/upload.png"))); // NOI18N
-        jButton12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        bCargarFoto.setBackground(new java.awt.Color(255, 255, 255));
+        bCargarFoto.setForeground(new java.awt.Color(0, 0, 82));
+        bCargarFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/upload.png"))); // NOI18N
+        bCargarFoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bCargarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                bCargarFotoActionPerformed(evt);
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(255, 255, 255));
-        jButton14.setForeground(new java.awt.Color(0, 0, 82));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wor.png"))); // NOI18N
-        jButton14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        bCurriculum.setBackground(new java.awt.Color(255, 255, 255));
+        bCurriculum.setForeground(new java.awt.Color(0, 0, 82));
+        bCurriculum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wor.png"))); // NOI18N
+        bCurriculum.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bCurriculum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                bCurriculumActionPerformed(evt);
             }
         });
-
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presidente", "Visepresidente 1 ", "Visepresidente 2" }));
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel26.setText("Curriculum");
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setForeground(new java.awt.Color(0, 0, 82));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/left.png"))); // NOI18N
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        bPlanGobierno.setBackground(new java.awt.Color(255, 255, 255));
+        bPlanGobierno.setForeground(new java.awt.Color(0, 0, 82));
+        bPlanGobierno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wor.png"))); // NOI18N
+        bPlanGobierno.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bPlanGobierno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                bPlanGobiernoActionPerformed(evt);
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel24.setText("Tipo");
+        partidoNombre.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        partidoNombre.setText("Nombre Partido");
 
-        jButton16.setBackground(new java.awt.Color(255, 255, 255));
-        jButton16.setForeground(new java.awt.Color(0, 0, 82));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wor.png"))); // NOI18N
-        jButton16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel16.setText("Presidente");
+
+        bDone.setBackground(new java.awt.Color(255, 255, 255));
+        bDone.setForeground(new java.awt.Color(0, 0, 82));
+        bDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ok.png"))); // NOI18N
+        bDone.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bDone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                bDoneActionPerformed(evt);
             }
         });
 
-        jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel27.setText("Nombre Partido");
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel17.setText("Vicepresidente 1");
+
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel18.setText("Vicepresidente 2");
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(210, 210, 210)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(150, 150, 150)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                        .addGap(80, 80, 80)
                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(imagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(42, 42, 42)
+                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(partidoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldNombrePresidente)
+                                            .addComponent(jTextFieldNombreVisepresidente1)
+                                            .addComponent(bSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(bPlanGobierno, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(bCargarFoto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(bCurriculum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+                                            .addComponent(jLabelUsuarioRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(47, 47, 47))
+                                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                        .addComponent(jTextFieldNombreVisepresidente2)
+                                        .addGap(55, 55, 55)))))
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(imagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bDone, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21))))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bDone, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(imagenIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(251, 251, 251))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(partidoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldNombrePresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldNombreVisepresidente1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNombreVisepresidente2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bPlanGobierno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bCurriculum, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(1, 1, 1)))
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(bCargarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelUsuarioRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(49, 49, 49))
         );
 
         getContentPane().add(panelPrincipal);
@@ -332,17 +352,25 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
             navBar = false;                 //it change the NavBar 2 status
             } 
         else{ //if navBar is close
-            panelPrincipal.setSize(500,700);//the panel for new game will change to Open
+            panelPrincipal.setSize(650,700);//the panel for new game will change to Open
             navBar = true;                    // it change the NavBar 2 status
            
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-    File fichero;
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void bSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSiguienteActionPerformed
+                // TODO add your handling code here:
+        String nombreConsulado = MetodosRegistroCivil.getInstance().listaPartidosPoliticos.get(punteroNombrePartido).nombre;
+        partidoNombre.setText(nombreConsulado);
+        if (punteroNombrePartido + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
+            punteroNombrePartido = 0;
+        } else {
+            punteroNombrePartido++;
+        }
+
+    }//GEN-LAST:event_bSiguienteActionPerformed
+    
+    private void bCargarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCargarFotoActionPerformed
         int resultado ;
         VentanaCargarArchivos ventana = new VentanaCargarArchivos();
         FileNameExtensionFilter filtro1 = new FileNameExtensionFilter("Fotos, JPG y PNG", "jpn","png");
@@ -350,25 +378,27 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         resultado = ventana.jFileCargarFoto.showOpenDialog(null);
         if(JFileChooser.APPROVE_OPTION == resultado){
             //guardar el archivo selecionado
-            fichero = ventana.jFileCargarFoto.getSelectedFile();
+            plan = ventana.jFileCargarFoto.getSelectedFile();
             try {
-                ImageIcon icon = new ImageIcon(fichero.toString());
+                ImageIcon icon = new ImageIcon(plan.toString());
                 //ajustar el tamaño de la imagen que se ha cargado
-                Icon icono = new ImageIcon(icon.getImage().getScaledInstance(imagenIcono.getWidth(), imagenIcono.getHeight(), Image.SCALE_DEFAULT));
+                Icon fotoSubida = new ImageIcon(icon.getImage().getScaledInstance(imagenIcono.getWidth(), imagenIcono.getHeight(), Image.SCALE_DEFAULT));
                 //borrar TEXTO en label
                 imagenIcono.setText(null);
                 //mostrar imagen en label
-                imagenIcono.setIcon(icono);
+                imagenIcono.setIcon(fotoSubida);
+                foto = (ImageIcon) fotoSubida;
+                
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null,"Error al abrir la imagen " + ex);
             }
         }
         
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_bCargarFotoActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    private void bCurriculumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCurriculumActionPerformed
+        buscarCurriculum();
+    }//GEN-LAST:event_bCurriculumActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         VentanaElecciones vElecciones =new VentanaElecciones();
@@ -382,65 +412,102 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void bPlanGobiernoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPlanGobiernoActionPerformed
         
-        JFileChooser archivo = new JFileChooser();
-        archivo.setFileFilter(filtro);
-        int ventana = archivo.showOpenDialog(this);
-        
-        if (ventana == JFileChooser.APPROVE_OPTION) {
-            //nombre
-            String nombre_archivo = archivo.getSelectedFile().getPath();
-            //ruta
-            String ruta_archivo = archivo.getSelectedFile().toString();
-            
-            
-           // File archivoSelecionado = archivo.getSelectedFile();
+        buscarPlan();
            
-           // this.direccionArchivo.setText(String.valueOf(archivoSelecionado));
-           // Image foto = getToolkit().getImage(this.direccionArchivo.getText());
-           // foto = foto.getScaledInstance(250, Math.round(250 * (250 / foto.getWidth(null))), Image.SCALE_DEFAULT);
+    }//GEN-LAST:event_bPlanGobiernoActionPerformed
+
+    private void bDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDoneActionPerformed
+        if(jTextFieldNombrePresidente.getText().isEmpty() | jTextFieldNombreVisepresidente1.getText().isEmpty() | jTextFieldNombreVisepresidente2.getText().isEmpty()| partidoNombre.getText().equals("Nombre Partido") ){
+            JOptionPane.showMessageDialog(rootPane, "Campo Vacio");
+        }
+        else{
+            Persona presidente = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombrePresidente.getText());
+            Persona vicePresidente1 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente1.getText());
+            Persona vicePresidente2 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente2.getText());
+            if(presidente != null && vicePresidente1 != null && vicePresidente2 != null){
+                PartidoPolitico partidoPolitico = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
+                CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum);
+                MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Alguno o varios de los nombres digitados no existe en el sistema. ");
+            }
             
         }
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_bDoneActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
         ventanaElecciones.setVisible(true);
         this.dispose();
     }
-    
+    public void buscarCurriculum() {
+        JFileChooser archivo = new JFileChooser();
+        archivo.setFileFilter(filtro);
+        int ventana = archivo.showOpenDialog(this);
+
+        if (ventana == JFileChooser.APPROVE_OPTION) {
+            //nombre
+            String nombre_archivo = archivo.getSelectedFile().getPath();
+            //ruta
+            String ruta_archivo = archivo.getSelectedFile().toString();
+            //Seleciono el archivo
+            File archivoSelecionado = archivo.getSelectedFile();
+            curriculum = archivoSelecionado;
+            
+
+        }
+        
+    }
+    public void buscarPlan() {
+        JFileChooser archivo = new JFileChooser();
+        archivo.setFileFilter(filtro);
+        int ventana = archivo.showOpenDialog(this);
+
+        if (ventana == JFileChooser.APPROVE_OPTION) {
+            //nombre
+            String nombre_archivo = archivo.getSelectedFile().getPath();
+            //ruta
+            String ruta_archivo = archivo.getSelectedFile().toString();
+            //Seleciono el archivo
+            File archivoSelecionado = archivo.getSelectedFile();
+            plan = archivoSelecionado;
+            
+
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bCargarFoto;
+    private javax.swing.JButton bCurriculum;
+    private javax.swing.JButton bDone;
+    private javax.swing.JButton bPlanGobierno;
+    private javax.swing.JButton bSiguiente;
     private javax.swing.JLabel imagenIcono;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelUsuarioRegistrado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldNombrePresidente;
+    private javax.swing.JTextField jTextFieldNombreVisepresidente1;
+    private javax.swing.JTextField jTextFieldNombreVisepresidente2;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JLabel partidoNombre;
     // End of variables declaration//GEN-END:variables
 
    
