@@ -257,7 +257,29 @@ public class MetodosRegistroCivil {
                 listaJRVextranjera.add(e);
             }
         }       
-    }    
+    } 
+    
+    //metodo pata obtener cantidad de votantes mayores de 100 años
+    public int obtenerVotantesCentenarios(){
+        int contador = 0;
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){
+            if( listaPersonasEmpadronadas.get(i).edad >= 100){
+                contador ++;
+            }
+        }
+        return contador;
+    }
+    
+    //metodo para obtener la cantidad de votantes entre 18 y 40 años
+    public int obtenerVotantesAdultos(){
+        int contador = 0;
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){
+            if( listaPersonasEmpadronadas.get(i).edad >= 18 && listaPersonasEmpadronadas.get(i).edad <= 40){
+                contador ++;
+            }
+        }
+        return contador;
+    }
   
     
     //metodo para retornar la clase singleton y si no existe la crea

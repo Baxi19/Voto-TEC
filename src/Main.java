@@ -132,9 +132,13 @@ public class Main {
         
         DomicilioElectoral d1 = new DomicilioElectoral("");
         DomicilioElectoral d2 = new DomicilioElectoral("Escuela San Pedro");
+        d2.setDistrito(laTigra);
         DomicilioElectoral d3 = new DomicilioElectoral("Escuela San Jose la Tigra");
+        d3.setDistrito(laTigra);
         DomicilioElectoral d4 = new DomicilioElectoral("Escuela San jose");
+        d4.setDistrito(sabanilla);
         DomicilioElectoral d5 = new DomicilioElectoral("Escuela tres rios");
+        d5.setLocalidad(l6);
         
         //************************Administradores**************************//
         Persona admin1 = new Persona("admin1", "", "", 0, 123, "Soltero", "", "m", "", "Costarricense", true, d1);
@@ -147,11 +151,11 @@ public class Main {
         MetodosRegistroCivil.getInstance().listaAdministradores.add(admin3);
         
         //****************************************Personas***********************************************//
-        PersonaNacional p1 = new PersonaNacional(laTigra, "Fabián", "Zamora", "Rivera", 20, 504170227, "Soltero", "10/7/97", "M", "Tilarán", "Costarricense", false, d2);
-        PersonaNacional p2 = new PersonaNacional(laTigra, "Randald", "Villegas", "Brenes", 26, 206910550, "Soltero", "19/9/91", "M", "San Carlos", "Costarricense", false, d3);
-        PersonaNacional p3 = new PersonaNacional(sanPedro, "Mario", "Mora", "Mendez", 35, 78210227, "Casado", "10/7/75", "M", "MOntes de Oca", "Costarricense", false, d4);
-        PersonaNacional p4 = new PersonaNacional(tresRios, "Carlos", "Alvarado", "Rivera", 40, 504170677, "Casado", "6/6/66", "M", "San Jose", "Costarricense", false, d5);
-        PersonaNacional p5 = new PersonaNacional(tresRios, "Maria", "Alvarado", "Quesada", 55, 50496477, "Casada", "8/6/99", "F", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p1 = new PersonaNacional(laTigra, "Fabián", "Zamora", "Rivera", 20, 504170227, "Soltero", "10/7/97", "Masculino", "Tilarán", "Costarricense", false, d2);
+        PersonaNacional p2 = new PersonaNacional(laTigra, "Randald", "Villegas", "Brenes", 26, 206910550, "Soltero", "19/9/91", "Masculino", "San Carlos", "Costarricense", false, d3);
+        PersonaNacional p3 = new PersonaNacional(sanPedro, "Mario", "Mora", "Mendez", 35, 78210227, "Casado", "10/7/75", "Masculino", "MOntes de Oca", "Costarricense", false, d4);
+        PersonaNacional p4 = new PersonaNacional(tresRios, "Carlos", "Alvarado", "Rivera", 40, 504170677, "Casado", "6/6/66", "Masculino", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p5 = new PersonaNacional(tresRios, "Maria", "Alvarado", "Quesada", 55, 50496477, "Casada", "8/6/99", "Femenino", "San Jose", "Costarricense", false, d5);
         
         
         // agregar personas a la lista de empadronados
