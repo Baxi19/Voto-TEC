@@ -239,7 +239,9 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        VentanaAgregarZona vZona = new VentanaAgregarZona(ventanaPrincipal);
+        vZona.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();

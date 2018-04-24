@@ -38,6 +38,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         this.ventanaPrincipal = ventanaPrincipal;
         initComponents();
         panelPrincipal.setSize(0,0);
+        
     }   
 
     
@@ -60,11 +61,9 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         imagenIcono = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabelUsuarioRegistrado = new javax.swing.JLabel();
         bSiguiente = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         bCargarFoto = new javax.swing.JButton();
         bCurriculum = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
@@ -143,9 +142,6 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel19.setText("Partido Politico");
 
-        jLabelUsuarioRegistrado.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabelUsuarioRegistrado.setText("Nombre");
-
         bSiguiente.setBackground(new java.awt.Color(255, 255, 255));
         bSiguiente.setForeground(new java.awt.Color(0, 0, 82));
         bSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/right.png"))); // NOI18N
@@ -161,9 +157,6 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel23.setText("Plan de Gobierno");
-
-        jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel25.setText("Usuario Registrado");
 
         bCargarFoto.setBackground(new java.awt.Color(255, 255, 255));
         bCargarFoto.setForeground(new java.awt.Color(0, 0, 82));
@@ -234,18 +227,15 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelPrincipalLayout.createSequentialGroup()
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(42, 42, 42)
-                                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(partidoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                            .addComponent(jTextFieldNombrePresidente)
-                                            .addComponent(jTextFieldNombreVisepresidente1)
-                                            .addComponent(bSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(partidoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldNombrePresidente)
+                                    .addComponent(jTextFieldNombreVisepresidente1)
+                                    .addComponent(bSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(panelPrincipalLayout.createSequentialGroup()
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,9 +249,8 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                                             .addComponent(bPlanGobierno, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(bCargarFoto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(bCurriculum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
-                                            .addComponent(jLabelUsuarioRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(47, 47, 47))
+                                                .addComponent(bCurriculum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)))
+                                        .addGap(175, 175, 175))
                                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                                         .addComponent(jTextFieldNombreVisepresidente2)
                                         .addGap(55, 55, 55)))))
@@ -319,13 +308,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                             .addGroup(panelPrincipalLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(bCargarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelUsuarioRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(61, 61, 61)))
                 .addGap(49, 49, 49))
         );
 
@@ -356,10 +339,11 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
             navBar = true;                    // it change the NavBar 2 status
            
         }
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void bSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSiguienteActionPerformed
-                // TODO add your handling code here:
+        // TODO add your handling code here:
         String nombreConsulado = MetodosRegistroCivil.getInstance().listaPartidosPoliticos.get(punteroNombrePartido).nombre;
         partidoNombre.setText(nombreConsulado);
         if (punteroNombrePartido + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
@@ -419,7 +403,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
     }//GEN-LAST:event_bPlanGobiernoActionPerformed
 
     private void bDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDoneActionPerformed
-        if(jTextFieldNombrePresidente.getText().isEmpty() | jTextFieldNombreVisepresidente1.getText().isEmpty() | jTextFieldNombreVisepresidente2.getText().isEmpty()| partidoNombre.getText().equals("Nombre Partido") ){
+        if(jTextFieldNombrePresidente.getText().isEmpty() | jTextFieldNombreVisepresidente1.getText().isEmpty() | jTextFieldNombreVisepresidente2.getText().isEmpty() ){
             JOptionPane.showMessageDialog(rootPane, "Campo Vacio");
         }
         else{
@@ -497,10 +481,8 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelUsuarioRegistrado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextFieldNombrePresidente;

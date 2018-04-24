@@ -172,21 +172,16 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel16" min="-2" pref="200" max="-2" attributes="0"/>
-                                              <Component id="jLabel19" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                              <Component id="jLabel17" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="partidoNombre" pref="180" max="32767" attributes="0"/>
-                                              <Component id="jTextFieldNombrePresidente" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextFieldNombreVisepresidente1" max="32767" attributes="0"/>
-                                              <Component id="bSiguiente" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="jLabel25" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="jLabel19" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="partidoNombre" pref="180" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldNombrePresidente" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldNombreVisepresidente1" max="32767" attributes="0"/>
+                                      <Component id="bSiguiente" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -205,9 +200,8 @@
                                                   <Component id="bCargarFoto" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="bCurriculum" alignment="0" pref="60" max="32767" attributes="0"/>
                                               </Group>
-                                              <Component id="jLabelUsuarioRegistrado" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="jTextFieldNombreVisepresidente2" max="32767" attributes="0"/>
@@ -289,16 +283,7 @@
                                   <Component id="bCargarFoto" min="-2" pref="60" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="jLabel25" min="-2" pref="40" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabelUsuarioRegistrado" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -326,14 +311,6 @@
               <Font name="Times New Roman" size="25" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Partido Politico"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelUsuarioRegistrado">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="25" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="bSiguiente">
@@ -371,14 +348,6 @@
               <Font name="Times New Roman" size="25" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Plan de Gobierno"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel25">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="25" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Usuario Registrado"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="bCargarFoto">
