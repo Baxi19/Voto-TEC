@@ -300,6 +300,8 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        int cantidadCentenarios = MetodosRegistroCivil.getInstance().obtenerVotantesCentenarios();
+        JOptionPane.showMessageDialog(rootPane, "Cantidad de votantes mayores a 100 años: " + cantidadCentenarios);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
