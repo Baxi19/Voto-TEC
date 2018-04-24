@@ -252,7 +252,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
         labelLocalidad.setText("Localidad");
         panelAgregaExtranjero.add(labelLocalidad);
-        labelLocalidad.setBounds(150, 430, 60, 20);
+        labelLocalidad.setBounds(160, 410, 60, 30);
 
         jButton9.setText(">");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +261,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
             }
         });
         panelAgregaExtranjero.add(jButton9);
-        jButton9.setBounds(150, 460, 40, 30);
+        jButton9.setBounds(120, 440, 120, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/addList.png"))); // NOI18N
         panelAgregaExtranjero.add(jLabel1);
@@ -320,8 +320,14 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
             }
             String d = TextFieldDomicilioElectoral.getText();
             Localidad localidad = MetodosRegistroCivil.getInstance().buscarLocalidad(labelLocalidad.getText());
-            MetodosRegistroCivil.getInstance().agregarExtranjeroAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, localidad);
+            if( e >= 18){
+                MetodosRegistroCivil.getInstance().agregarExtranjeroAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, localidad);
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " agregada con éxito al sistema.");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Solo pueden empadronarse personas mayores de 18 años.");
+            }
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -25,6 +25,7 @@ public class MetodosRegistroCivil {
     public ArrayList<CandidaturaPresidente> listaCandidaturasPresidente ;
     public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;
     public Persona adminLogueado;
+    public Persona personaLogueada;
     
     
     //constructor de la clase singleton de be ser privado para evitar nuevas instancias de este
@@ -35,9 +36,9 @@ public class MetodosRegistroCivil {
         this.listaDistritos = new ArrayList<Distrito>();            // lista distritos
         this.listaLocalidades = new ArrayList<Localidad>();         // lista localidades
         this.listaConsulados = new ArrayList<Consulado>();          // lista consulados
-        this.listaPartidosPoliticos = new ArrayList<PartidoPolitico>();
-        this.listaCandidaturasDiputado = new ArrayList<CandidaturaDiputado>();
-        this.listaCandidaturasPresidente = new ArrayList<CandidaturaPresidente>();
+        this.listaPartidosPoliticos = new ArrayList<PartidoPolitico>();            //lista partidos politicos
+        this.listaCandidaturasDiputado = new ArrayList<CandidaturaDiputado>();     // lista cadidaturas diputado
+        this.listaCandidaturasPresidente = new ArrayList<CandidaturaPresidente>(); // lista candidaturas presidente
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -178,6 +179,14 @@ public class MetodosRegistroCivil {
         aux.setNacionalidad(nuevaNacionalidad);
         aux.setFallecido(nuevoFallecido);
         aux.setDomicilioElectoral(nuevoDomicilioElectoral);
+    }
+
+    public Persona getPersonaLogueada() {
+        return personaLogueada;
+    }
+
+    public void setPersonaLogueada(Persona personaLogueada) {
+        this.personaLogueada = personaLogueada;
     }
 
     public Persona getAdminLogueado() {

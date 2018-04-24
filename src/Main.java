@@ -94,6 +94,7 @@ public class Main {
         MetodosRegistroCivil.getInstance().listaDistritos.add(sanAntonio);
         MetodosRegistroCivil.getInstance().listaDistritos.add(ezcazuD);
         MetodosRegistroCivil.getInstance().listaDistritos.add(sanPedro);
+        MetodosRegistroCivil.getInstance().listaDistritos.add(sabanilla);
         MetodosRegistroCivil.getInstance().listaDistritos.add(tresRios);
         MetodosRegistroCivil.getInstance().listaDistritos.add(concepcion);
         MetodosRegistroCivil.getInstance().listaDistritos.add(orosi);

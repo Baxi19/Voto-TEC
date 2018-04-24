@@ -407,16 +407,15 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Campo Vacio");
         }
         else{
-            Persona presidente = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombrePresidente.getText());
-            Persona vicePresidente1 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente1.getText());
-            Persona vicePresidente2 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronadaNombre(jTextFieldNombreVisepresidente2.getText());
+            Persona presidente = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(jTextFieldNombrePresidente.getText()));
+            Persona vicePresidente1 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(jTextFieldNombreVisepresidente1.getText()));
+            Persona vicePresidente2 = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(jTextFieldNombreVisepresidente2.getText()));
             if(presidente != null && vicePresidente1 != null && vicePresidente2 != null){
                 PartidoPolitico partidoPolitico = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoNombre.getText());
-                Persona admin = MetodosRegistroCivil.getInstance().adminLogueado;
+                Persona admin = MetodosRegistroCivil.getInstance().personaLogueada;
                 CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum, admin);
                  System.out.println("Candidatura registrada por: " + cPresidente.admin.nombre);
-                MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);
-               
+                MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);   
                 
             }
             else{

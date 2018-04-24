@@ -72,6 +72,12 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         modificarTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -224,7 +230,7 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
 
         jLabel26.setText("Nueva nacionalidad:");
         panelPrincipal1.add(jLabel26);
-        jLabel26.setBounds(320, 290, 97, 15);
+        jLabel26.setBounds(290, 280, 100, 30);
 
         ComboBoxFallecido1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No" }));
         panelPrincipal1.add(ComboBoxFallecido1);
@@ -256,7 +262,7 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
             }
         });
         panelPrincipal1.add(jButton3);
-        jButton3.setBounds(300, 590, 50, 50);
+        jButton3.setBounds(300, 610, 50, 50);
 
         jLabel1.setText("ID de usuario a modificar:");
         panelPrincipal1.add(jLabel1);
@@ -266,7 +272,36 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
 
         jLabel7.setText("Modificar");
         panelPrincipal1.add(jLabel7);
-        jLabel7.setBounds(300, 560, 50, 15);
+        jLabel7.setBounds(300, 585, 60, 20);
+
+        jLabel8.setText("Nueva localidad");
+        panelPrincipal1.add(jLabel8);
+        jLabel8.setBounds(30, 510, 110, 30);
+
+        jButton1.setText(">>");
+        panelPrincipal1.add(jButton1);
+        jButton1.setBounds(140, 510, 120, 30);
+
+        jLabel9.setText("Localidad");
+        panelPrincipal1.add(jLabel9);
+        jLabel9.setBounds(160, 490, 46, 15);
+
+        jLabel11.setText("Nuevo distrito");
+        panelPrincipal1.add(jLabel11);
+        jLabel11.setBounds(320, 520, 70, 20);
+
+        jLabel12.setText("Distrito");
+        panelPrincipal1.add(jLabel12);
+        jLabel12.setBounds(450, 480, 80, 30);
+
+        jButton4.setText(">>");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        panelPrincipal1.add(jButton4);
+        jButton4.setBounds(400, 510, 130, 30);
 
         panelPrincipal.add(panelPrincipal1);
         panelPrincipal1.setBounds(0, 0, 1000, 700);
@@ -338,6 +373,7 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "No existe una persona registrada con el ID digitado.");
         } 
         else {
+            
             int ID = Integer.parseInt(modificarTextField.getText());
             String n = TextFieldNombre1.getText();
             String a1 = TextFieldPrimerApellido1.getText();
@@ -358,6 +394,10 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " modificada con éxito.");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
     public void cerrar() {
         VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
         ventanaRegistro.setVisible(true);
@@ -378,11 +418,15 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldNombre1;
     private javax.swing.JTextField TextFieldPrimerApellido1;
     private javax.swing.JTextField TextFieldSegundoApellido1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -401,6 +445,8 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField modificarTextField;
     private javax.swing.JPanel panelPrincipal;

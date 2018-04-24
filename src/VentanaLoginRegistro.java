@@ -141,8 +141,6 @@ public class VentanaLoginRegistro extends javax.swing.JFrame {
         });
         panelPrincipal.add(jButton3);
         jButton3.setBounds(180, 550, 50, 50);
-
-        passwordFieldRegistroCivil.setText("jPasswordField1");
         panelPrincipal.add(passwordFieldRegistroCivil);
         passwordFieldRegistroCivil.setBounds(190, 430, 130, 40);
 

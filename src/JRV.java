@@ -16,6 +16,15 @@ public class JRV {
     int cantidadElectores;
     String centroVotacion;
     String direccion;
-    char pais;
+    String pais;
     ArrayList<MiembroDeMesa> listaMiembrosDeMesa;
+
+    public JRV(int codigo, int cantidadElectores, String centroVotacion, String direccion, String pais) {
+        this.codigo = codigo;
+        this.cantidadElectores = cantidadElectores;
+        this.centroVotacion = centroVotacion;
+        this.direccion = direccion;
+        this.pais = pais;
+        this.listaMiembrosDeMesa = new ArrayList<MiembroDeMesa>();
+    }
 }

@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -137,8 +140,6 @@ public class VentanaLoginCandidaturaDiputado extends javax.swing.JFrame {
         });
         panelPrincipal.add(jButton3);
         jButton3.setBounds(180, 550, 50, 50);
-
-        jPasswordField1.setText("jPasswordField1");
         panelPrincipal.add(jPasswordField1);
         jPasswordField1.setBounds(190, 430, 130, 40);
 
@@ -157,7 +158,25 @@ public class VentanaLoginCandidaturaDiputado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        cerrar();
+        if(jTextField2.getText().isEmpty() | jPasswordField1.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Field empty.");
+        }
+        else {
+            String nombre = jTextField2.getText();
+            int cedula = Integer.parseInt(jPasswordField1.getText());
+            Persona persona = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(cedula);
+            if (persona == null) {
+                JOptionPane.showMessageDialog(rootPane, "Persona no encontrado");
+            }
+            else{
+                if(persona.nombre.equals(nombre)){
+                    MetodosRegistroCivil.getInstance().setPersonaLogueada(persona);
+                    VentanaRegistroCivil vRegistroCivil = new VentanaRegistroCivil(this.ventanaPrincipal);
+                    vRegistroCivil.setVisible(true);
+                    this.dispose();
+                }
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

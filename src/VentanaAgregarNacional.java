@@ -249,7 +249,7 @@ public class VentanaAgregarNacional extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel30.setText("Dirección");
         panelPrincipal1.add(jLabel30);
-        jLabel30.setBounds(150, 440, 120, 30);
+        jLabel30.setBounds(160, 420, 120, 30);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 82));
         jButton3.setForeground(new java.awt.Color(0, 0, 82));
@@ -265,7 +265,7 @@ public class VentanaAgregarNacional extends javax.swing.JFrame {
 
         labelDistrito.setText("Distrito");
         panelPrincipal1.add(labelDistrito);
-        labelDistrito.setBounds(170, 470, 50, 30);
+        labelDistrito.setBounds(180, 450, 60, 30);
 
         jButton1.setText(">>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +274,7 @@ public class VentanaAgregarNacional extends javax.swing.JFrame {
             }
         });
         panelPrincipal1.add(jButton1);
-        jButton1.setBounds(150, 510, 46, 25);
+        jButton1.setBounds(140, 480, 120, 30);
 
         panelPrincipal.add(panelPrincipal1);
         panelPrincipal1.setBounds(0, 0, 1000, 700);
@@ -362,8 +362,13 @@ public class VentanaAgregarNacional extends javax.swing.JFrame {
             }
             String d = TextFieldDomicilioElectoral1.getText();
             Distrito distrito = MetodosRegistroCivil.getInstance().buscarDistrito(labelDistrito.getText());
-            MetodosRegistroCivil.getInstance().agregarNacionalAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, distrito);
+            if( e >= 18){
+                MetodosRegistroCivil.getInstance().agregarNacionalAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, distrito);
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " agregada con éxito al sistema.");
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Solo pueden empadronarse personas mayores de 18 años.");
+            }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
