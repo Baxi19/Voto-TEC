@@ -20,9 +20,9 @@ public class Persona {
     public String lugarNacimiento;
     public String nacionalidad;
     public boolean fallecido;
-    public String domicilioElectoral;
+    public DomicilioElectoral domicilioElectoral;
 
-    public Persona(String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
+    public Persona(String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, DomicilioElectoral domicilioElectoral) {
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
@@ -125,17 +125,12 @@ public class Persona {
         this.fallecido = fallecido;
     }
 
-    public String getDomicilioElectoral() {
+    public DomicilioElectoral getDomicilioElectoral() {
         return domicilioElectoral;
     }
 
-    public void setDomicilioElectoral(String domicilioElectoral) {
+    public void setDomicilioElectoral(DomicilioElectoral domicilioElectoral) {
         this.domicilioElectoral = domicilioElectoral;
     }
-    
-    
-
-    
-    
     
 }

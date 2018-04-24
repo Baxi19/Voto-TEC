@@ -171,8 +171,8 @@ public class VentanaLoginCandidaturaDiputado extends javax.swing.JFrame {
             else{
                 if(persona.nombre.equals(nombre)){
                     MetodosRegistroCivil.getInstance().setPersonaLogueada(persona);
-                    VentanaRegistroCivil vRegistroCivil = new VentanaRegistroCivil(this.ventanaPrincipal);
-                    vRegistroCivil.setVisible(true);
+                    VentanaCandidaturaDiputado vc = new VentanaCandidaturaDiputado(this.ventanaPrincipal);
+                    vc.setVisible(true);
                     this.dispose();
                 }
             }

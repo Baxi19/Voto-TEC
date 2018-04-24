@@ -318,8 +318,9 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
             if (ComboBoxFallecido.getSelectedItem().equals("Sí")) {
                 f = true;
             }
-            String d = TextFieldDomicilioElectoral.getText();
+            DomicilioElectoral d = new DomicilioElectoral(TextFieldDomicilioElectoral.getText());          
             Localidad localidad = MetodosRegistroCivil.getInstance().buscarLocalidad(labelLocalidad.getText());
+            d.setLocalidad(localidad);
             if( e >= 18){
                 MetodosRegistroCivil.getInstance().agregarExtranjeroAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, localidad);
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " agregada con éxito al sistema.");

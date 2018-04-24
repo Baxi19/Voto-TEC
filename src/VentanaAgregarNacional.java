@@ -360,10 +360,11 @@ public class VentanaAgregarNacional extends javax.swing.JFrame {
             if (ComboBoxFallecido1.getSelectedItem().equals("Sí")) {
                 f = true;
             }
-            String d = TextFieldDomicilioElectoral1.getText();
+            DomicilioElectoral d = new DomicilioElectoral(TextFieldDomicilioElectoral1.getText());
             Distrito distrito = MetodosRegistroCivil.getInstance().buscarDistrito(labelDistrito.getText());
+            d.setDistrito(distrito);
             if( e >= 18){
-                MetodosRegistroCivil.getInstance().agregarNacionalAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d, distrito);
+                MetodosRegistroCivil.getInstance().agregarNacionalAlRegistro(n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d,distrito);
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " agregada con éxito al sistema.");
             }
             else{

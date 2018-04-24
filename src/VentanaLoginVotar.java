@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -122,6 +125,12 @@ public class VentanaLoginVotar extends javax.swing.JFrame {
         jLabel13.setText("Nombre");
         panelPrincipal.add(jLabel13);
         jLabel13.setBounds(30, 320, 100, 40);
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         panelPrincipal.add(jTextField2);
         jTextField2.setBounds(190, 430, 130, 40);
 
@@ -159,7 +168,25 @@ public class VentanaLoginVotar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        cerrar();
+        if(jTextField3.getText().isEmpty() | jTextField2.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Field empty.");
+        }
+        else {
+            String nombre = jTextField3.getText();
+            int cedula = Integer.parseInt(jTextField2.getText());
+            Persona persona = MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(cedula);
+            if (persona == null) {
+                JOptionPane.showMessageDialog(rootPane, "Persona no encontrado");
+            }
+            else{
+                if(persona.nombre.equals(nombre)){
+                    MetodosRegistroCivil.getInstance().setPersonaLogueada(persona);
+                    VentanaVotoDiputado vd = new VentanaVotoDiputado();
+                    vd.setVisible(true);
+                    this.dispose();
+                }
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -189,6 +216,10 @@ public class VentanaLoginVotar extends javax.swing.JFrame {
         vElecciones.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
     public void cerrar() {
         
         VentanaVotoPresidente ventanaVoto = new VentanaVotoPresidente();

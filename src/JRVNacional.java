@@ -19,9 +19,6 @@ public class JRVNacional extends JRV{
         this.distrito = distrito;
     }
 
-    public JRVNacional(int codigo, int cantidadElectores, String centroVotacion, String direccion, String pais) {
-        super(codigo, cantidadElectores, centroVotacion, direccion, pais);
-    }
     
     
 

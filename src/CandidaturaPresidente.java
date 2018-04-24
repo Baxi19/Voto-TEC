@@ -21,6 +21,7 @@ public class CandidaturaPresidente {
     File planDeGobierno;
     File cv;
     Persona admin;
+    int votos;
 
     public CandidaturaPresidente(Persona Presidente, Persona vicepresidentePrincipal, Persona vicepresidenteSecundario, PartidoPolitico partidoPolitico, ImageIcon fotografiaPresidente, File planDeGobierno, File cv, Persona admin) {
         this.Presidente = Presidente;
@@ -31,7 +32,17 @@ public class CandidaturaPresidente {
         this.planDeGobierno = planDeGobierno;
         this.cv = cv;
         this.admin = admin;
+        this.votos = 0;
     }
+
+    public int getVotos() {
+        return votos;
+    }
+
+    public void setVotos(int votos) {
+        this.votos = votos;
+    }
+    
 
     public Persona getPresidente() {
         return Presidente;

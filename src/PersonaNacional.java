@@ -11,10 +11,12 @@
 public class PersonaNacional extends Persona{
     public Distrito distrito;
 
-    public PersonaNacional(Distrito distrito, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, String domicilioElectoral) {
+    public PersonaNacional(Distrito distrito, String nombre, String primerApellido, String segundoApellido, int edad, int cedula, String estadoCivil, String fechaNacimiento, String sexo, String lugarNacimiento, String nacionalidad, boolean fallecido, DomicilioElectoral domicilioElectoral) {
         super(nombre, primerApellido, segundoApellido, edad, cedula, estadoCivil, fechaNacimiento, sexo, lugarNacimiento, nacionalidad, fallecido, domicilioElectoral);
         this.distrito = distrito;
     }
+
+   
 
     public Distrito getDistrito() {
         return distrito;
@@ -133,12 +135,13 @@ public class PersonaNacional extends Persona{
         this.fallecido = fallecido;
     }
 
-    public String getDomicilioElectoral() {
+    @Override
+    public DomicilioElectoral getDomicilioElectoral() {
         return domicilioElectoral;
     }
 
     @Override
-    public void setDomicilioElectoral(String domicilioElectoral) {
+    public void setDomicilioElectoral(DomicilioElectoral domicilioElectoral) {
         this.domicilioElectoral = domicilioElectoral;
     }   
     

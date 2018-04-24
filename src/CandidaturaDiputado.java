@@ -15,11 +15,20 @@ public class CandidaturaDiputado {
     PartidoPolitico partidoPolitico;     // partido politico asociado al diputado
     ArrayList<Diputado> listaDiputados;        // personas que ocuparan los puestos de diputado
     Persona admin;                       // admin actual que registró la candidatura a listaDiputados
-
+    int votos;
     public CandidaturaDiputado(PartidoPolitico partidoPolitico, ArrayList<Diputado> diputados, Persona admin) {
         this.partidoPolitico = partidoPolitico;
         this.listaDiputados = diputados;
         this.admin = admin;
+        this.votos = 0;
+    }
+
+    public int getVotos() {
+        return votos;
+    }
+
+    public void setVotos(int votos) {
+        this.votos = votos;
     }
 
     public PartidoPolitico getPartidoPolitico() {

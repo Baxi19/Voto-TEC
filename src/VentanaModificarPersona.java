@@ -66,18 +66,10 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         ComboBoxFallecido1 = new javax.swing.JComboBox<>();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        TextFieldDomicilioElectoral1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         modificarTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -240,18 +232,6 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         panelPrincipal1.add(jLabel27);
         jLabel27.setBounds(340, 350, 45, 15);
 
-        jLabel28.setText("Nuevo Domicilio Electoral:");
-        panelPrincipal1.add(jLabel28);
-        jLabel28.setBounds(300, 410, 90, 15);
-
-        TextFieldDomicilioElectoral1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldDomicilioElectoral1ActionPerformed(evt);
-            }
-        });
-        panelPrincipal1.add(TextFieldDomicilioElectoral1);
-        TextFieldDomicilioElectoral1.setBounds(400, 400, 118, 31);
-
         jButton3.setBackground(new java.awt.Color(0, 0, 82));
         jButton3.setForeground(new java.awt.Color(0, 0, 82));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/yes.png"))); // NOI18N
@@ -273,35 +253,6 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         jLabel7.setText("Modificar");
         panelPrincipal1.add(jLabel7);
         jLabel7.setBounds(300, 585, 60, 20);
-
-        jLabel8.setText("Nueva localidad");
-        panelPrincipal1.add(jLabel8);
-        jLabel8.setBounds(30, 510, 110, 30);
-
-        jButton1.setText(">>");
-        panelPrincipal1.add(jButton1);
-        jButton1.setBounds(140, 510, 120, 30);
-
-        jLabel9.setText("Localidad");
-        panelPrincipal1.add(jLabel9);
-        jLabel9.setBounds(160, 490, 46, 15);
-
-        jLabel11.setText("Nuevo distrito");
-        panelPrincipal1.add(jLabel11);
-        jLabel11.setBounds(320, 520, 70, 20);
-
-        jLabel12.setText("Distrito");
-        panelPrincipal1.add(jLabel12);
-        jLabel12.setBounds(450, 480, 80, 30);
-
-        jButton4.setText(">>");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        panelPrincipal1.add(jButton4);
-        jButton4.setBounds(400, 510, 130, 30);
 
         panelPrincipal.add(panelPrincipal1);
         panelPrincipal1.setBounds(0, 0, 1000, 700);
@@ -344,10 +295,6 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void TextFieldDomicilioElectoral1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDomicilioElectoral1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldDomicilioElectoral1ActionPerformed
-
     private void TextFieldLugarNacimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldLugarNacimiento1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldLugarNacimiento1ActionPerformed
@@ -372,8 +319,7 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
         else if (MetodosRegistroCivil.getInstance().buscarPersonaEmpadronada(Integer.parseInt(modificarTextField.getText())) == null) {
             JOptionPane.showMessageDialog(rootPane, "No existe una persona registrada con el ID digitado.");
         } 
-        else {
-            
+        else {    
             int ID = Integer.parseInt(modificarTextField.getText());
             String n = TextFieldNombre1.getText();
             String a1 = TextFieldPrimerApellido1.getText();
@@ -389,15 +335,10 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
             if (ComboBoxFallecido1.getSelectedItem().equals("Sí")) {
                 f = true;
             }
-            String d = TextFieldDomicilioElectoral1.getText();
-            MetodosRegistroCivil.getInstance().modificarPersonaNacional(ID,n,a1,a2,e,c,ec,fn,sex,ln,nc,f,d);
+            MetodosRegistroCivil.getInstance().modificarPersonaNacional(ID,n,a1,a2,e,c,ec,fn,sex,ln,nc,f);
             JOptionPane.showMessageDialog(rootPane, "Persona: " + n + " modificada con éxito.");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
     public void cerrar() {
         VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);
         ventanaRegistro.setVisible(true);
@@ -409,7 +350,6 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBoxFallecido1;
     private javax.swing.JComboBox<String> ComboBoxSexo1;
     private javax.swing.JTextField TextFieldCedula1;
-    private javax.swing.JTextField TextFieldDomicilioElectoral1;
     private javax.swing.JTextField TextFieldEdad1;
     private javax.swing.JTextField TextFieldEstadoCivil1;
     private javax.swing.JTextField TextFieldFechaNacimiento1;
@@ -418,15 +358,11 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldNombre1;
     private javax.swing.JTextField TextFieldPrimerApellido1;
     private javax.swing.JTextField TextFieldSegundoApellido1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -439,14 +375,11 @@ public class VentanaModificarPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField modificarTextField;
     private javax.swing.JPanel panelPrincipal;
