@@ -1,5 +1,8 @@
 
-import javax.swing.ImageIcon;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,16 +21,25 @@ public class PartidoPolitico {
     String fechaFundacion;
     int telefono;
     String direccion;
-    ImageIcon bandera;
+    String imagePath;
 
-    public PartidoPolitico(String nombre, int codigo, String escala, String fechaFundacion, int telefono, String direccion, ImageIcon bandera) {
+    public PartidoPolitico(String nombre, int codigo, String escala, String fechaFundacion, int telefono, String direccion, String imagePath) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.escala = escala;
         this.fechaFundacion = fechaFundacion;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.bandera = bandera;
+        this.imagePath = imagePath;
+    }
+
+    public PartidoPolitico(String nombre, int codigo, String escala, String fechaFundacion, int telefono, String direccion) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.escala = escala;
+        this.fechaFundacion = fechaFundacion;
+        this.telefono = telefono;
+        this.direccion = direccion;
     }
 
     public String getNombre() {
@@ -62,6 +74,14 @@ public class PartidoPolitico {
         this.fechaFundacion = fechaFundacion;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
     public int getTelefono() {
         return telefono;
     }
@@ -78,13 +98,6 @@ public class PartidoPolitico {
         this.direccion = direccion;
     }
 
-    public ImageIcon getBandera() {
-        return bandera;
-    }
-
-    public void setBandera(ImageIcon bandera) {
-        this.bandera = bandera;
-    }
     
     
 }

@@ -267,7 +267,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
             String direccionP = jTextField4.getText();
             File fichero = null;
             ImageIcon bandera = (ImageIcon) selecionarImagen(fichero);
-            PartidoPolitico nuevoPartidoPolitico = new PartidoPolitico(nombreP, codigoP, escalaP, fechaFundacionP, telefonoP, direccionP, bandera);
+            PartidoPolitico nuevoPartidoPolitico = new PartidoPolitico(nombreP, codigoP, escalaP, fechaFundacionP, telefonoP, direccionP);
             MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(nuevoPartidoPolitico);
             JOptionPane.showMessageDialog(rootPane, "Partido agregado exitosamente");
         }

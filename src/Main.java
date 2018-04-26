@@ -1,3 +1,7 @@
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -164,7 +168,15 @@ public class Main {
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p3);
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p4);
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p5);
-        
+       
+        //********************************* Partidos Politicos ****************************//
+        PartidoPolitico pp1 = new PartidoPolitico("PAC", 0, "Nacional", "14/2/1960", 1234567, "San José, Costa Rica", "\\Imagenes\\bandera.png");
+        PartidoPolitico pp2 = new PartidoPolitico("PLN", 0, "Nacional", "24/6/1989", 7654321, "Heredia, Costa Rica", "\\Imagenes\\bandera.png");
+        PartidoPolitico pp3 = new PartidoPolitico("PUSC", 0, "Nacional", "6/6/2006", 2617354, "Alajuela, Costa Rica", "\\Imagenes\\bandera.png");
+        //agregar partidos a la lista de partidos politicos registrados en el registro civil
+        MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(pp1);
+        MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(pp2);
+        MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(pp3);
         
         VentanaElecciones vEleciones = new VentanaElecciones();
         vEleciones.setVisible(true);

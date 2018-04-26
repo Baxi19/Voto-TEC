@@ -305,7 +305,11 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        int n;
+        int m;
+        n = MetodosRegistroCivil.getInstance().obtenerCantidadHombres();
+        m = MetodosRegistroCivil.getInstance().obtenerCantidadMujeres();
+        JOptionPane.showMessageDialog(rootPane,n + "hombres, " + m + " mujeres");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed

@@ -28,6 +28,7 @@ public class MetodosRegistroCivil {
     public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;
     public Persona adminLogueado;
     public Persona personaLogueada;
+
     
     
     //constructor de la clase singleton de be ser privado para evitar nuevas instancias de este
@@ -41,6 +42,8 @@ public class MetodosRegistroCivil {
         this.listaPartidosPoliticos = new ArrayList<PartidoPolitico>();            //lista partidos politicos
         this.listaCandidaturasDiputado = new ArrayList<CandidaturaDiputado>();     // lista cadidaturas diputado
         this.listaCandidaturasPresidente = new ArrayList<CandidaturaPresidente>(); // lista candidaturas presidente
+        this.listaJRVextranjera = new ArrayList<JRVExtranjera>();                  // lista JRVs en el extranjero
+        this.listaJRVnacional = new ArrayList<JRVNacional>();                      // lista JRVs nacionales      
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -226,7 +229,6 @@ public class MetodosRegistroCivil {
         return contador;   
     }
     
-    
     //metodo para crear JRV por distrito en territorio nacional
     public void generarJRVnacional() {
         for (int i = 0; i < listaDistritos.size(); i++) {
@@ -234,12 +236,10 @@ public class MetodosRegistroCivil {
             int cantidadElectores = obtenerCantidadVotantesPorLocalidad(distrito.nombre);
             String centroVotacion = "Centro de votación de " + distrito.nombre;
             String direccion = "Distrito: " + listaDistritos.get(i).nombre + ", Cantón: " + listaDistritos.get(i).canton.nombre + ", Provincia: " + listaDistritos.get(i).canton.provincia.nombre;
-            JRVNacional n = new JRVNacional(distrito, i, cantidadElectores, centroVotacion, direccion, "Costa Rica");
-            if (listaJRVnacional.contains(n)) {
-                continue;
-            } else {
-                listaJRVnacional.add(n);
-            }
+            JRVNacional n = new JRVNacional(distrito, i, cantidadElectores, centroVotacion, direccion, "Costa Rica");   
+            listaJRVnacional.add(n);
+            System.out.println("JRV Nacional: " + n.centroVotacion + " agregada con éxito");
+
         }
     }
     
@@ -251,11 +251,9 @@ public class MetodosRegistroCivil {
             String centroVotacion = "Centro de votación de " + localidad.nombre;
             String direccion = "Localidad: " + localidad.nombre + ", Consulado: " + localidad.consulado.nombre;
             JRVExtranjera e = new JRVExtranjera(localidad, i, cantELectore, centroVotacion, direccion, localidad.consulado.nombre);
-            if (listaJRVextranjera.contains(e)) {
-                continue;
-            } else {
-                listaJRVextranjera.add(e);
-            }
+            listaJRVextranjera.add(e);
+            System.out.println("JRV Extranjera: " + e.centroVotacion + " agregada con éxito");
+
         }       
     } 
     
@@ -281,7 +279,29 @@ public class MetodosRegistroCivil {
         return contador;
     }
     
-    
+    //metodo para obtener porcentaje de hombres
+    public int obtenerCantidadHombres(){
+        int hombres = 0;
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){
+            if( listaPersonasEmpadronadas.get(i).sexo.equals("Masculino")){
+                hombres++;
+            }
+        }
+        System.out.println("Cantidad de hombres: "+ hombres);
+        return hombres;      
+    }
+    //metodo para obtener porcentaje de mujeres
+    public int obtenerCantidadMujeres(){
+        int mujeres = 0;
+        for(int i = 0; i < listaPersonasEmpadronadas.size(); i++){
+            if( listaPersonasEmpadronadas.get(i).sexo.equals("Femenino")){
+                mujeres++;
+            }
+        }
+        System.out.println("Cantidad de mujeres: "+ mujeres);
+        return mujeres;     
+    }
+   
     // metodo para retornar la clase singleton y si no existe la crea
     public static MetodosRegistroCivil getInstance(){
         if(instance == null)                             
