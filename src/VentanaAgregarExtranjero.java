@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class VentanaAgregarExtranjero extends javax.swing.JFrame {
     VentanaElecciones ventanaPrincipal;
+    public int punteroLocalidad = 0;
     private boolean navBar = false;
     /**
      * Creates new form VentanaLogin
@@ -254,7 +255,7 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
         panelAgregaExtranjero.add(labelLocalidad);
         labelLocalidad.setBounds(160, 410, 60, 30);
 
-        jButton9.setText(">");
+        jButton9.setText(">>");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -405,6 +406,13 @@ public class VentanaAgregarExtranjero extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        String localidad = MetodosRegistroCivil.getInstance().listaLocalidades.get(punteroLocalidad).nombre;
+        labelLocalidad.setText(localidad);
+        if (punteroLocalidad + 1 > (MetodosRegistroCivil.getInstance().listaLocalidades.size() - 1)) {
+            punteroLocalidad = 0;
+        } else {
+            punteroLocalidad++;
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
     public void cerrar() {
         VentanaRegistroCivil ventanaRegistro = new VentanaRegistroCivil(this.ventanaPrincipal);

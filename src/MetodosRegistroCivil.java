@@ -366,9 +366,10 @@ public class MetodosRegistroCivil {
                 mujeres++;
             }
         }
-        System.out.println("Cantidad de mujeres: "+ mujeres);
+        System.out.println("Cantidad de mujeres: " + mujeres);
         return mujeres;     
     }
+    
    
     // metodo para retornar la clase singleton y si no existe la crea
     public static MetodosRegistroCivil getInstance(){

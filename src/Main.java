@@ -1,7 +1,4 @@
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59,13 +56,13 @@ public class Main {
         
         //******************************Distritos******************************//
         Distrito laTigra = new Distrito(0211, "La Tigra", sanCarlos);
-        Distrito quesada = new Distrito(0212, "Qeesada", sanCarlos);             // distritos san carlos
+        Distrito quesada = new Distrito(0212, "Quesada", sanCarlos);             // distritos san carlos
         //-------------------------------------------------------------------------------------------------//
         Distrito canalete = new Distrito(0221, "Canalete", upala);              
         Distrito bijagua = new Distrito(0222, "Bijagua", upala);                 // distritos upala
         //-------------------------------------------------------------------------------------------------//
         Distrito katira = new Distrito(0231, "Katira", guatuso);
-        Distrito sanRafael = new Distrito(0232, "sanRafael", guatuso);           // distritos Guatuso
+        Distrito sanRafael = new Distrito(0232, "San Rafael", guatuso);           // distritos Guatuso
         //-------------------------------------------------------------------------------------------------//
         Distrito rivas = new Distrito(0111, "Rivas", perezZeledon);
         Distrito elGeneral = new Distrito(0112, "El General", perezZeledon);     // distritos perez z.

@@ -204,7 +204,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Agregar Partido Político");
+        jLabel9.setText("Partido Político >");
         jPanel2.add(jLabel9);
         jLabel9.setBounds(10, 440, 270, 40);
 
@@ -294,6 +294,9 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        VentanaAgregarPartidoPolitico vAgregarPartido = new VentanaAgregarPartidoPolitico(ventanaPrincipal);
+        vAgregarPartido.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed

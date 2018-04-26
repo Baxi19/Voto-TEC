@@ -102,7 +102,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton5);
-        jButton5.setBounds(160, 450, 50, 50);
+        jButton5.setBounds(150, 400, 50, 50);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/back.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -156,29 +156,29 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
 
         jLabel7.setText("Código:");
         panelPrincipal.add(jLabel7);
-        jLabel7.setBounds(130, 170, 50, 14);
+        jLabel7.setBounds(130, 170, 50, 15);
         panelPrincipal.add(jTextField2);
         jTextField2.setBounds(240, 160, 140, 30);
 
         jLabel8.setText("Escala: ");
         panelPrincipal.add(jLabel8);
-        jLabel8.setBounds(130, 210, 60, 14);
+        jLabel8.setBounds(130, 210, 60, 15);
 
         jLabel9.setText("Fecha de fundación:");
         panelPrincipal.add(jLabel9);
-        jLabel9.setBounds(90, 250, 100, 14);
+        jLabel9.setBounds(90, 250, 100, 15);
         panelPrincipal.add(jTextField4);
         jTextField4.setBounds(240, 240, 140, 30);
 
         jLabel11.setText("Teléfono:");
         panelPrincipal.add(jLabel11);
-        jLabel11.setBounds(120, 290, 60, 14);
+        jLabel11.setBounds(120, 290, 60, 15);
         panelPrincipal.add(jTextField5);
         jTextField5.setBounds(240, 280, 140, 30);
 
         jLabel14.setText("Bandera");
         panelPrincipal.add(jLabel14);
-        jLabel14.setBounds(120, 420, 70, 14);
+        jLabel14.setBounds(120, 420, 70, 15);
         panelPrincipal.add(jTextField6);
         jTextField6.setBounds(240, 320, 140, 30);
 
@@ -209,7 +209,7 @@ public class VentanaAgregarPartidoPolitico extends javax.swing.JFrame {
 
         jLabel16.setText("Dirección:");
         panelPrincipal.add(jLabel16);
-        jLabel16.setBounds(120, 330, 70, 14);
+        jLabel16.setBounds(120, 330, 70, 15);
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 650, 700);

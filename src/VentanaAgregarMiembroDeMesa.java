@@ -194,7 +194,7 @@ public class VentanaAgregarMiembroDeMesa extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton7);
-        jButton7.setBounds(80, 240, 140, 30);
+        jButton7.setBounds(50, 240, 210, 30);
 
         panelPrincipal1.add(jPanel1);
         jPanel1.setBounds(80, 200, 330, 310);

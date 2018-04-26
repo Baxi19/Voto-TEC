@@ -46,15 +46,13 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
         jButton24 = new javax.swing.JButton();
         nombreProvinciaTextField = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
         codigoProvinciaTextField = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
         consuladoLabel = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         nombreLocalidadTextField = new javax.swing.JTextField();
@@ -62,9 +60,9 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         codigoLocalidadTextField = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
         nombreDistritoTextField = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
         cantonLabel = new javax.swing.JLabel();
@@ -72,16 +70,16 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         codigoDistritoTextField = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         nombreConsuladoTextField = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         codigoConsuladoTextField = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
         provinciaLabel = new javax.swing.JLabel();
         jButton22 = new javax.swing.JButton();
         nombreCantonTextField = new javax.swing.JTextField();
@@ -89,6 +87,8 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         codigoCantonTextField = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -151,19 +151,12 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/aditNode.png"))); // NOI18N
         panelPrincipal.add(jLabel1);
-        jLabel1.setBounds(520, 10, 110, 110);
+        jLabel1.setBounds(340, 490, 110, 110);
 
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel8.setLayout(null);
 
-        jLabel51.setText("Código:");
-        jPanel8.add(jLabel51);
-        jLabel51.setBounds(20, 100, 40, 30);
-
-        jLabel52.setText("Nombre:");
-        jPanel8.add(jLabel52);
-        jLabel52.setBounds(10, 50, 50, 30);
-
+        jButton24.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jButton24.setText("Agregar provincia");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,9 +174,10 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel8.add(nombreProvinciaTextField);
         nombreProvinciaTextField.setBounds(70, 50, 120, 30);
 
+        jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel37.setText("Agregar Provincia");
         jPanel8.add(jLabel37);
-        jLabel37.setBounds(60, 0, 120, 15);
+        jLabel37.setBounds(70, 0, 120, 20);
 
         codigoProvinciaTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,23 +187,26 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel8.add(codigoProvinciaTextField);
         codigoProvinciaTextField.setBounds(70, 100, 120, 30);
 
+        jLabel53.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel53.setText("Nombre:");
+        jPanel8.add(jLabel53);
+        jLabel53.setBounds(20, 50, 40, 30);
+
+        jLabel56.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel56.setText("Código:");
+        jPanel8.add(jLabel56);
+        jLabel56.setBounds(20, 100, 50, 30);
+
         panelPrincipal.add(jPanel8);
         jPanel8.setBounds(70, 240, 200, 200);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setLayout(null);
 
-        jLabel41.setText("Código:");
-        jPanel4.add(jLabel41);
-        jLabel41.setBounds(20, 60, 40, 30);
-
-        jLabel43.setText("Nombre:");
-        jPanel4.add(jLabel43);
-        jLabel43.setBounds(20, 20, 40, 30);
-
+        consuladoLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         consuladoLabel.setText("Consulado");
         jPanel4.add(consuladoLabel);
-        consuladoLabel.setBounds(60, 120, 130, 30);
+        consuladoLabel.setBounds(70, 130, 130, 30);
 
         jButton16.setText(">");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -218,11 +215,12 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton16);
-        jButton16.setBounds(10, 130, 40, 25);
+        jButton16.setBounds(10, 130, 50, 25);
         jPanel4.add(nombreLocalidadTextField);
-        nombreLocalidadTextField.setBounds(70, 20, 120, 30);
+        nombreLocalidadTextField.setBounds(70, 30, 120, 30);
 
-        jButton20.setText("Agregar Localida");
+        jButton20.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jButton20.setText("Agregar Localidad");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -231,13 +229,15 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel4.add(jButton20);
         jButton20.setBounds(10, 160, 180, 30);
 
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel38.setText("Agregar Localidad");
         jPanel4.add(jLabel38);
-        jLabel38.setBounds(50, 0, 100, 15);
+        jLabel38.setBounds(50, 0, 100, 13);
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel6.setText("Seleccione consulado:");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(10, 100, 120, 15);
+        jLabel6.setBounds(10, 110, 120, 13);
 
         codigoLocalidadTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,21 +245,23 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel4.add(codigoLocalidadTextField);
-        codigoLocalidadTextField.setBounds(70, 60, 120, 30);
+        codigoLocalidadTextField.setBounds(70, 70, 120, 30);
+
+        jLabel42.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel42.setText("Nombre:");
+        jPanel4.add(jLabel42);
+        jLabel42.setBounds(20, 30, 40, 30);
+
+        jLabel40.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel40.setText("Código:");
+        jPanel4.add(jLabel40);
+        jLabel40.setBounds(20, 70, 50, 30);
 
         panelPrincipal.add(jPanel4);
         jPanel4.setBounds(290, 20, 200, 200);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setLayout(null);
-
-        jLabel45.setText("Código :");
-        jPanel5.add(jLabel45);
-        jLabel45.setBounds(20, 70, 40, 30);
-
-        jLabel46.setText("Nombre :");
-        jPanel5.add(jLabel46);
-        jLabel46.setBounds(10, 30, 50, 30);
         jPanel5.add(nombreDistritoTextField);
         nombreDistritoTextField.setBounds(70, 30, 120, 30);
 
@@ -270,16 +272,19 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel5.add(jButton17);
-        jButton17.setBounds(10, 130, 40, 25);
+        jButton17.setBounds(10, 130, 50, 25);
 
+        cantonLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         cantonLabel.setText("Cantón");
         jPanel5.add(cantonLabel);
-        cantonLabel.setBounds(60, 130, 130, 30);
+        cantonLabel.setBounds(70, 130, 130, 30);
 
+        jLabel50.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel50.setText("Seleccione Cantón:");
         jPanel5.add(jLabel50);
-        jLabel50.setBounds(10, 110, 100, 20);
+        jLabel50.setBounds(10, 100, 100, 30);
 
+        jButton18.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jButton18.setText("Agregar Distrito");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,20 +300,23 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel5.add(codigoDistritoTextField);
         codigoDistritoTextField.setBounds(70, 70, 120, 30);
 
+        jLabel57.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel57.setText("Código:");
+        jPanel5.add(jLabel57);
+        jLabel57.setBounds(20, 70, 50, 30);
+
+        jLabel58.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel58.setText("Nombre:");
+        jPanel5.add(jLabel58);
+        jLabel58.setBounds(20, 30, 40, 30);
+
         panelPrincipal.add(jPanel5);
         jPanel5.setBounds(70, 460, 200, 200);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel6.setLayout(null);
 
-        jLabel40.setText("Código:");
-        jPanel6.add(jLabel40);
-        jLabel40.setBounds(10, 100, 50, 30);
-
-        jLabel42.setText("Nombre:");
-        jPanel6.add(jLabel42);
-        jLabel42.setBounds(10, 50, 40, 30);
-
+        jButton14.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jButton14.setText("Agregar Consulado");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,11 +328,22 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel6.add(nombreConsuladoTextField);
         nombreConsuladoTextField.setBounds(60, 50, 130, 30);
 
+        jLabel39.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel39.setText("Agregar Consulado/País");
         jPanel6.add(jLabel39);
-        jLabel39.setBounds(30, 0, 160, 15);
+        jLabel39.setBounds(50, 0, 160, 20);
         jPanel6.add(codigoConsuladoTextField);
         codigoConsuladoTextField.setBounds(60, 100, 130, 30);
+
+        jLabel44.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel44.setText("Nombre:");
+        jPanel6.add(jLabel44);
+        jLabel44.setBounds(10, 50, 40, 30);
+
+        jLabel55.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel55.setText("Código:");
+        jPanel6.add(jLabel55);
+        jLabel55.setBounds(10, 100, 50, 30);
 
         panelPrincipal.add(jPanel6);
         jPanel6.setBounds(70, 20, 200, 200);
@@ -332,17 +351,10 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel7.setLayout(null);
 
-        jLabel48.setText("Código:");
-        jPanel7.add(jLabel48);
-        jLabel48.setBounds(20, 70, 50, 30);
-
-        jLabel49.setText("Nombre:");
-        jPanel7.add(jLabel49);
-        jLabel49.setBounds(20, 30, 40, 30);
-
+        provinciaLabel.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         provinciaLabel.setText("Provincia");
         jPanel7.add(provinciaLabel);
-        provinciaLabel.setBounds(60, 130, 130, 30);
+        provinciaLabel.setBounds(70, 130, 130, 30);
 
         jButton22.setText(">");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -351,10 +363,11 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButton22);
-        jButton22.setBounds(10, 130, 40, 25);
+        jButton22.setBounds(10, 130, 50, 25);
         jPanel7.add(nombreCantonTextField);
         nombreCantonTextField.setBounds(70, 30, 120, 30);
 
+        jButton23.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jButton23.setText("Agregar Cantón");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,13 +377,15 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         jPanel7.add(jButton23);
         jButton23.setBounds(10, 160, 180, 30);
 
+        jLabel47.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel47.setText("Seleccione provincia:");
         jPanel7.add(jLabel47);
-        jLabel47.setBounds(10, 110, 120, 15);
+        jLabel47.setBounds(10, 110, 120, 13);
 
+        jLabel36.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel36.setText("Agregar Cantón");
         jPanel7.add(jLabel36);
-        jLabel36.setBounds(60, 0, 110, 15);
+        jLabel36.setBounds(70, 0, 110, 20);
 
         codigoCantonTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -379,6 +394,16 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
         });
         jPanel7.add(codigoCantonTextField);
         codigoCantonTextField.setBounds(70, 70, 120, 30);
+
+        jLabel54.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel54.setText("Nombre:");
+        jPanel7.add(jLabel54);
+        jLabel54.setBounds(20, 30, 40, 30);
+
+        jLabel59.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel59.setText("Código:");
+        jPanel7.add(jLabel59);
+        jLabel59.setBounds(20, 70, 50, 30);
 
         panelPrincipal.add(jPanel7);
         jPanel7.setBounds(290, 240, 200, 200);
@@ -595,18 +620,18 @@ public class VentanaAgregarZona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
