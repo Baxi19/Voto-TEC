@@ -181,8 +181,8 @@ public class VentanaLoginVotar extends javax.swing.JFrame {
             else{
                 if(persona.nombre.equals(nombre)){
                     MetodosRegistroCivil.getInstance().setPersonaLogueada(persona);
-                    VentanaVotoDiputado vd = new VentanaVotoDiputado();
-                    vd.setVisible(true);
+                    VentanaVotoPresidente vp = new VentanaVotoPresidente();
+                    vp.setVisible(true);
                     this.dispose();
                 }
             }

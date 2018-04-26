@@ -34,6 +34,19 @@ public class CandidaturaPresidente {
         this.admin = admin;
         this.votos = 0;
     }
+    
+    public CandidaturaPresidente(Persona Presidente, Persona vicepresidentePrincipal, Persona vicepresidenteSecundario, PartidoPolitico partidoPolitico, Persona admin) {
+        this.Presidente = Presidente;
+        this.vicepresidentePrincipal = vicepresidentePrincipal;
+        this.vicepresidenteSecundario = vicepresidenteSecundario;
+        this.partidoPolitico = partidoPolitico;
+        this.fotografiaPresidente = null;
+        this.planDeGobierno = null;
+        this.cv = null;
+        this.admin = admin;
+        this.votos = 0;
+    }
+
 
     public int getVotos() {
         return votos;

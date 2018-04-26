@@ -301,7 +301,7 @@ public class VentanaAgregarMiembroDeMesa extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      String nombrePartidoPolitico = MetodosRegistroCivil.getInstance().listaPartidosPoliticos.get(punteroPartidoPolitico).nombre;
+        String nombrePartidoPolitico = MetodosRegistroCivil.getInstance().listaPartidosPoliticos.get(punteroPartidoPolitico).nombre;
         labelPartidoPolitico.setText(nombrePartidoPolitico);
         if (punteroPartidoPolitico + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
             punteroPartidoPolitico = 0;

@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -157,7 +160,17 @@ public class Main {
         PersonaNacional p3 = new PersonaNacional(sanPedro, "Mario", "Mora", "Mendez", 35, 78210227, "Casado", "10/7/75", "Masculino", "MOntes de Oca", "Costarricense", false, d4);
         PersonaNacional p4 = new PersonaNacional(tresRios, "Carlos", "Alvarado", "Rivera", 40, 504170677, "Casado", "6/6/66", "Masculino", "San Jose", "Costarricense", false, d5);
         PersonaNacional p5 = new PersonaNacional(tresRios, "Maria", "Alvarado", "Quesada", 55, 50496477, "Casada", "8/6/99", "Femenino", "San Jose", "Costarricense", false, d5);
-        
+        PersonaNacional p6 = new PersonaNacional(laTigra, "Mauricio", "Zamora", "Rivera", 20, 2131237, "Soltero", "10/7/97", "Masculino", "Tilarán", "Costarricense", false, d2);
+        PersonaNacional p7 = new PersonaNacional(laTigra, "Allan", "Villegas", "Brenes", 26, 24232131, "Soltero", "19/9/91", "Masculino", "San Carlos", "Costarricense", false, d3);
+        PersonaNacional p8 = new PersonaNacional(sanPedro, "Jefry", "Mora", "Mendez", 120, 72123237, "Casado", "10/7/75", "Masculino", "MOntes de Oca", "Costarricense", false, d4);
+        PersonaNacional p9 = new PersonaNacional(tresRios, "Karla", "Alvarado", "Rivera", 101, 50231237, "Casado", "6/6/66", "Masculino", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p10 = new PersonaNacional(tresRios, "Natalia", "Alvarado", "Quesada", 55, 501123377, "Casada", "8/6/99", "Femenino", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p11 = new PersonaNacional(laTigra, "David", "Zamora", "Rivera", 20, 50417027, "Soltero", "10/7/97", "Masculino", "Tilarán", "Costarricense", false, d2);
+        PersonaNacional p12 = new PersonaNacional(laTigra, "Yorleny", "Villegas", "Brenes", 26, 22910550, "Soltero", "19/9/91", "Masculino", "San Carlos", "Costarricense", false, d3);
+        PersonaNacional p13 = new PersonaNacional(sanPedro, "Marlen", "Mora", "Mendez", 35, 78245227, "Casado", "10/7/75", "Masculino", "MOntes de Oca", "Costarricense", false, d4);
+        PersonaNacional p14 = new PersonaNacional(tresRios, "Raul", "Alvarado", "Rivera", 40, 640170677, "Casado", "6/6/66", "Masculino", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p15 = new PersonaNacional(tresRios, "Meylin", "Alvarado", "Quesada", 55, 750496477, "Casada", "8/6/99", "Femenino", "San Jose", "Costarricense", false, d5);
+        PersonaNacional p16 = new PersonaNacional(laTigra, "Miguelete", "Zamora", "Rivera", 20, 1228747, "Soltero", "10/7/97", "Masculino", "Tilarán", "Costarricense", false, d2);
         
         // agregar personas a la lista de empadronados
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p1);
@@ -165,6 +178,11 @@ public class Main {
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p3);
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p4);
         MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p5);
+        MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p6);
+        MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p7);
+        MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p8);
+        MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p9);
+        MetodosRegistroCivil.getInstance().listaPersonasEmpadronadas.add(p10);
        
         //********************************* Partidos Politicos ****************************//
         PartidoPolitico pp1 = new PartidoPolitico("PAC", 0, "Nacional", "14/2/1960", 1234567, "San José, Costa Rica", "\\Imagenes\\bandera.png");
@@ -175,6 +193,43 @@ public class Main {
         MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(pp2);
         MetodosRegistroCivil.getInstance().listaPartidosPoliticos.add(pp3);
         
+        //*************************** Candidaturas a presidente ****************************//
+        CandidaturaPresidente cp1 = new CandidaturaPresidente(p6, p7, p8, pp3,admin3);
+        CandidaturaPresidente cp2 = new CandidaturaPresidente(p9, p10, p11, pp2,admin3);
+        CandidaturaPresidente cp3 = new CandidaturaPresidente(p12, p13, p14, pp1,admin3);
+        
+        //agregar candidaturas a la lista de candidaturas
+        MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cp1);
+        MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cp2);
+        MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cp3);
+        
+        //************************** Candidaturas a diputados *********************************//
+        ArrayList<Diputado> listaDiputados = new ArrayList<>();
+        Diputado diputado1 = new Diputado(p1, alajuela, "Propietario", 1);
+        Diputado diputado2 = new Diputado(p1, sanJose, "Propietario", 1);
+        Diputado diputado3 = new Diputado(p1, cartago, "Propietario", 1);
+        listaDiputados.add(diputado1); listaDiputados.add(diputado2) ; listaDiputados.add(diputado3);
+        CandidaturaDiputado cd1 = new CandidaturaDiputado(pp1, listaDiputados, admin3);
+        
+        ArrayList<Diputado> listaDiputados2 = new ArrayList<>();
+        Diputado diputado4 = new Diputado(p4, alajuela, "Propietario", 1);
+        Diputado diputado5 = new Diputado(p5, sanJose, "Propietario", 1);
+        Diputado diputado6 = new Diputado(p6, cartago, "Propietario", 1);
+        listaDiputados2.add(diputado4); listaDiputados.add(diputado5) ; listaDiputados.add(diputado6);
+        CandidaturaDiputado cd2 = new CandidaturaDiputado(pp2, listaDiputados2, admin3);
+        
+        ArrayList<Diputado> listaDiputados3 = new ArrayList<>();
+        Diputado diputado7 = new Diputado(p7, alajuela, "Propietario", 1);
+        Diputado diputado8 = new Diputado(p8, sanJose, "Propietario", 1);
+        Diputado diputado9 = new Diputado(p9, cartago, "Propietario", 1);
+        listaDiputados3.add(diputado7); listaDiputados.add(diputado8) ; listaDiputados.add(diputado9);
+        CandidaturaDiputado cd3 = new CandidaturaDiputado(pp3, listaDiputados3, admin3);
+
+        //agregar candidatura de diputados a la lista de candidaturas a diputado
+        MetodosRegistroCivil.getInstance().listaCandidaturasDiputado.add(cd1);
+        MetodosRegistroCivil.getInstance().listaCandidaturasDiputado.add(cd2);
+        MetodosRegistroCivil.getInstance().listaCandidaturasDiputado.add(cd3);
+
         VentanaElecciones vEleciones = new VentanaElecciones();
         vEleciones.setVisible(true);
         

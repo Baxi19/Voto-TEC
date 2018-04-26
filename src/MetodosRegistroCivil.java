@@ -26,6 +26,8 @@ public class MetodosRegistroCivil {
     public ArrayList<CandidaturaPresidente> listaCandidaturasPresidente;   // lista de candidaturas a presidencia para la siguiente elección
     public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;      // lista de cancidadutas a diputado para la siguiente elección
     public ArrayList<Persona> listaAdministradores = new ArrayList<>(100); // lista de administradores que pueden acceder al registro civil
+    public ArrayList<VotoPresidente> listaVotosPresidente;                          // lista de votos registrados en el sistema
+    public ArrayList<VotoDiputados> listaVotoDiputados;
     public Persona adminLogueado;
     public Persona personaLogueada;
     public static MetodosRegistroCivil instance = null;       // unico objeto de la clase MetodosRegistroCivil (singleton)
@@ -46,6 +48,8 @@ public class MetodosRegistroCivil {
         this.listaJRVextranjera = new ArrayList<JRVExtranjera>();                  // lista JRVs en el extranjero
         this.listaJRVnacional = new ArrayList<JRVNacional>();                      // lista JRVs nacionales      
         this.listaTotalJRV = new ArrayList<JRV>();
+        this.listaVotosPresidente = new ArrayList<>();
+        this.listaVotoDiputados = new ArrayList<>();
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -370,7 +374,69 @@ public class MetodosRegistroCivil {
         return mujeres;     
     }
     
-   
+    //metodo para votar por un presidente
+    public boolean votarPresidente(String presidente){
+        for(int i = 0; i < listaCandidaturasPresidente.size(); i++){
+            if(listaCandidaturasPresidente.get(i).Presidente.nombre.equals(presidente)){
+                listaCandidaturasPresidente.get(i).votos++;
+                return true;
+            }
+        }
+        return false;
+    }
+    //metodo para votar por los diputados de un partido politico
+    public boolean votarDiputados(String partidoPolitico){
+        for(int i = 0; i < listaCandidaturasDiputado.size(); i++){
+            if(listaCandidaturasDiputado.get(i).partidoPolitico.nombre.equals(partidoPolitico)){
+                listaCandidaturasDiputado.get(i).votos++;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    //metodo para buscar una candidatura de diputados por su nombre de partido político
+    public CandidaturaDiputado buscarCandidaturaDiputado(String partidoPolitico){
+        for(int i = 0; i < listaCandidaturasDiputado.size(); i++){
+            if(listaCandidaturasDiputado.get(i).partidoPolitico.nombre.equals(partidoPolitico)){
+                return listaCandidaturasDiputado.get(i);
+            }
+        }
+        return null;
+    }
+    
+    //metodo para consultar cantidad de votos a presidente por distrito
+    public int consultarVotosPresidentePorDistrito(String distrito){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().nombre.equals(distrito)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    public int consultarVotosPresidentePorCanton(String canton){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().canton.nombre.equals(canton)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    public int consultarVotosPresidentePorProvincia(String provincia){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().canton.provincia.nombre.equals(provincia)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+
     // metodo para retornar la clase singleton y si no existe la crea
     public static MetodosRegistroCivil getInstance(){
         if(instance == null)                             

@@ -1,6 +1,7 @@
 
 import java.awt.HeadlessException;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +14,8 @@ import javax.swing.JButton;
  * @author toshib
  */
 public class VentanaVotoDiputado extends javax.swing.JFrame {
-
+    public int punteroCandidaturas = 0;
+    public boolean votoEmitido = false;
     VentanaElecciones ventanaElecciones;
     /**
      * Creates new form VentanaVoto
@@ -34,21 +36,11 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jPanel5 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jPanel6 = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jPanel7 = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jPanel8 = new javax.swing.JPanel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jPanel9 = new javax.swing.JPanel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jPanel10 = new javax.swing.JPanel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jPanel11 = new javax.swing.JPanel();
-        jCheckBox7 = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        labelPartidoPolitico = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -86,206 +78,47 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(1000, 600));
         jPanel2.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel4.setMinimumSize(new java.awt.Dimension(250, 200));
-        jPanel4.setPreferredSize(new java.awt.Dimension(250, 200));
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setLayout(null);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox8)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox8)
-                .addContainerGap())
-        );
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel5.setText("Papeleta para Diputados");
+        jPanel4.add(jLabel5);
+        jLabel5.setBounds(120, 10, 140, 20);
+
+        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jButton6.setText("Votar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton6);
+        jButton6.setBounds(180, 215, 160, 40);
+
+        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jButton4.setText("Siguiente");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton4);
+        jButton4.setBounds(20, 215, 160, 40);
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel8.setText("Partido Politico:");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(90, 90, 90, 30);
+
+        labelPartidoPolitico.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        labelPartidoPolitico.setText("Nulo");
+        jPanel4.add(labelPartidoPolitico);
+        labelPartidoPolitico.setBounds(190, 90, 90, 30);
 
         jPanel2.add(jPanel4);
-        jPanel4.setBounds(0, 240, 250, 200);
-
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel5.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel5);
-        jPanel5.setBounds(0, 40, 250, 200);
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel6.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel6.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox3)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox3)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel6);
-        jPanel6.setBounds(500, 40, 250, 200);
-
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel7.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel7.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel7);
-        jPanel7.setBounds(250, 40, 250, 200);
-
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel8.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel8.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
-                .addComponent(jCheckBox4)
-                .addGap(18, 18, 18))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox4)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel8);
-        jPanel8.setBounds(750, 40, 250, 200);
-
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel9.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel9.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addComponent(jCheckBox5)
-                .addGap(20, 20, 20))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox5)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel9);
-        jPanel9.setBounds(750, 240, 250, 200);
-
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel10.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel10.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox6)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox6)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel10);
-        jPanel10.setBounds(500, 240, 250, 200);
-
-        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel11.setMaximumSize(new java.awt.Dimension(250, 200));
-        jPanel11.setMinimumSize(new java.awt.Dimension(250, 200));
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jCheckBox7)
-                .addContainerGap())
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jCheckBox7)
-                .addContainerGap())
-        );
-
-        jPanel2.add(jPanel11);
-        jPanel11.setBounds(250, 240, 250, 200);
+        jPanel4.setBounds(340, 70, 360, 270);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 100, 1000, 440);
@@ -325,11 +158,11 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 82));
-        jLabel1.setText("Selecione un Diputado");
+        jLabel1.setText("Selecione los diputados de un partido");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(260, 0, 484, 56);
+        jLabel1.setBounds(150, 0, 720, 56);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 50, 1000, 50);
@@ -350,6 +183,40 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         vElecciones.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+
+        if(labelPartidoPolitico.getText().equals("Nulo")){
+            JOptionPane.showMessageDialog(rootPane, "Seleccione una opción");
+        }
+        else{
+            if(votoEmitido == false){
+                MetodosRegistroCivil.getInstance().votarDiputados(labelPartidoPolitico.getText());
+                votoEmitido = true;
+                Persona votante = MetodosRegistroCivil.getInstance().personaLogueada;
+                CandidaturaDiputado cd= MetodosRegistroCivil.getInstance().buscarCandidaturaDiputado(labelPartidoPolitico.getText());
+                VotoDiputados nuevoVotoDiputados = new VotoDiputados(votante, cd);
+                MetodosRegistroCivil.getInstance().listaVotoDiputados.add(nuevoVotoDiputados);
+                JOptionPane.showMessageDialog(rootPane, "Ud a votado exitosamente por los diputados del partido: " + labelPartidoPolitico.getText());
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Ud ya ha emitido un voto por presidente, proceda al inicio.");
+            }
+
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        String pp = MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.get(punteroCandidaturas).partidoPolitico.nombre;
+        labelPartidoPolitico.setText(pp);
+        if (punteroCandidaturas + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
+            punteroCandidaturas = 0;
+        } else {
+            punteroCandidaturas++;
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
     
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
@@ -396,27 +263,17 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel labelPartidoPolitico;
     // End of variables declaration//GEN-END:variables
 }
