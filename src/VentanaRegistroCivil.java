@@ -52,6 +52,8 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -81,13 +83,13 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton5);
-        jButton5.setBounds(280, 610, 40, 40);
+        jButton5.setBounds(280, 620, 40, 40);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Menu Principal");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 610, 190, 40);
+        jLabel5.setBounds(20, 620, 190, 40);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 82));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -102,9 +104,9 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Generar JRVs");
+        jLabel4.setText("+ Miembros de mesa");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(10, 500, 270, 40);
+        jLabel4.setBounds(10, 560, 270, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 82));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
@@ -206,6 +208,23 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
         jPanel2.add(jLabel9);
         jLabel9.setBounds(10, 440, 270, 40);
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Generar JRVs");
+        jPanel2.add(jLabel11);
+        jLabel11.setBounds(20, 500, 200, 40);
+
+        jButton12.setBackground(new java.awt.Color(0, 0, 82));
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/next1.png"))); // NOI18N
+        jButton12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton12);
+        jButton12.setBounds(280, 560, 40, 40);
+
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 350, 670);
 
@@ -276,6 +295,18 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        if(jrvcreadas == true){
+            VentanaAgregarMiembroDeMesa vMiembro = new VentanaAgregarMiembroDeMesa(ventanaPrincipal);
+            vMiembro.setVisible(true);
+            this.dispose(); 
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Aún no hay JRV generadas");  
+        }             
+    }//GEN-LAST:event_jButton12ActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
         ventanaElecciones.setVisible(true);
@@ -287,6 +318,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -294,6 +326,7 @@ public class VentanaRegistroCivil extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

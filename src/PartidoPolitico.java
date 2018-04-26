@@ -40,6 +40,7 @@ public class PartidoPolitico {
         this.fechaFundacion = fechaFundacion;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.imagePath = "";
     }
 
     public String getNombre() {

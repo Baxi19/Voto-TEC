@@ -25,7 +25,7 @@ public class JRV {
         this.centroVotacion = centroVotacion;
         this.direccion = direccion;
         this.pais = pais;
-        this.listaMiembrosDeMesa = new ArrayList<MiembroDeMesa>();
+        this.listaMiembrosDeMesa = new ArrayList<>();
     }
 
     public int getCodigo() {

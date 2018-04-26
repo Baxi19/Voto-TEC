@@ -13,21 +13,22 @@ import java.util.ArrayList;
  */
 public class MetodosRegistroCivil {
     // Variables para implementar los métodos
-    public ArrayList<Persona> listaPersonasEmpadronadas;   //lista de todas las personas empadronadas en el sistema
-    public ArrayList<Provincia> listaProvincias;           // lista de todas las provincias registradas en el sistema
-    public ArrayList<Canton> listaCantones;                // lista de todos los cantones registrados en el sistema
-    public ArrayList<Distrito> listaDistritos;             // lista de todos los distritos registrados en el sistema
-    public ArrayList<Localidad> listaLocalidades;          // lista de todas las localidades registradas en el sistema
-    public ArrayList<PartidoPolitico> listaPartidosPoliticos; // lista de partidos politicos registrados en el sistema
-    public ArrayList<Consulado> listaConsulados;           // lista de todos los consulados registrados en el sistema
-    public ArrayList<JRVNacional> listaJRVnacional;        // lista de todas las JRV nacionales registradas en el sistema
-    public ArrayList<JRVExtranjera> listaJRVextranjera;        // lista de todas las JRV extranjeras registradas en el sistema
-    public static MetodosRegistroCivil instance = null;    // unico objeto de la clase MetodosRegistroCivil (singleton)
-    public ArrayList<Persona> listaAdministradores = new ArrayList<>(100);
-    public ArrayList<CandidaturaPresidente> listaCandidaturasPresidente ;
-    public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;
+    public ArrayList<Persona> listaPersonasEmpadronadas;                   //lista de todas las personas empadronadas en el sistema
+    public ArrayList<Provincia> listaProvincias;                           // lista de todas las provincias registradas en el sistema
+    public ArrayList<Canton> listaCantones;                                // lista de todos los cantones registrados en el sistema
+    public ArrayList<Distrito> listaDistritos;                             // lista de todos los distritos registrados en el sistema
+    public ArrayList<Localidad> listaLocalidades;                          // lista de todas las localidades registradas en el sistema
+    public ArrayList<PartidoPolitico> listaPartidosPoliticos;              // lista de partidos politicos registrados en el sistema
+    public ArrayList<Consulado> listaConsulados;                           // lista de todos los consulados registrados en el sistema
+    public ArrayList<JRVNacional> listaJRVnacional;                        // lista de todas las JRV nacionales registradas en el sistema
+    public ArrayList<JRVExtranjera> listaJRVextranjera;                    // lista de todas las JRV extranjeras registradas en el sistema
+    public ArrayList<JRV> listaTotalJRV;                                   // lista total de JRV que se utilizaran en la siguiente votación
+    public ArrayList<CandidaturaPresidente> listaCandidaturasPresidente;   // lista de candidaturas a presidencia para la siguiente elección
+    public ArrayList<CandidaturaDiputado> listaCandidaturasDiputado ;      // lista de cancidadutas a diputado para la siguiente elección
+    public ArrayList<Persona> listaAdministradores = new ArrayList<>(100); // lista de administradores que pueden acceder al registro civil
     public Persona adminLogueado;
     public Persona personaLogueada;
+    public static MetodosRegistroCivil instance = null;       // unico objeto de la clase MetodosRegistroCivil (singleton)
 
     
     
@@ -44,6 +45,7 @@ public class MetodosRegistroCivil {
         this.listaCandidaturasPresidente = new ArrayList<CandidaturaPresidente>(); // lista candidaturas presidente
         this.listaJRVextranjera = new ArrayList<JRVExtranjera>();                  // lista JRVs en el extranjero
         this.listaJRVnacional = new ArrayList<JRVNacional>();                      // lista JRVs nacionales      
+        this.listaTotalJRV = new ArrayList<JRV>();
     }
 
     public ArrayList<Persona> getListaAdministradores() {
@@ -164,8 +166,7 @@ public class MetodosRegistroCivil {
             if(listaCandidaturasPresidente.get(i).partidoPolitico.nombre.equals(partido)){
                 return listaCandidaturasPresidente.get(i);
             }
-        }
-        
+        }     
         return null;
     }
     
@@ -238,6 +239,7 @@ public class MetodosRegistroCivil {
             String direccion = "Distrito: " + listaDistritos.get(i).nombre + ", Cantón: " + listaDistritos.get(i).canton.nombre + ", Provincia: " + listaDistritos.get(i).canton.provincia.nombre;
             JRVNacional n = new JRVNacional(distrito, i, cantidadElectores, centroVotacion, direccion, "Costa Rica");   
             listaJRVnacional.add(n);
+            listaTotalJRV.add(n);
             System.out.println("JRV Nacional: " + n.centroVotacion + " agregada con éxito");
 
         }
@@ -247,15 +249,81 @@ public class MetodosRegistroCivil {
     public void generarJRVExtranjera() {
         for (int i = 0; i < listaLocalidades.size(); i++) {
             Localidad localidad = listaLocalidades.get(i);
-            int cantELectore = obtenerCantidadVotantesPorLocalidad(localidad.nombre);
+            int cantElectore = obtenerCantidadVotantesPorLocalidad(localidad.nombre);
             String centroVotacion = "Centro de votación de " + localidad.nombre;
             String direccion = "Localidad: " + localidad.nombre + ", Consulado: " + localidad.consulado.nombre;
-            JRVExtranjera e = new JRVExtranjera(localidad, i, cantELectore, centroVotacion, direccion, localidad.consulado.nombre);
+            JRVExtranjera e = new JRVExtranjera(localidad, i, cantElectore, centroVotacion, direccion, localidad.consulado.nombre);
             listaJRVextranjera.add(e);
+            listaTotalJRV.add(e);
             System.out.println("JRV Extranjera: " + e.centroVotacion + " agregada con éxito");
-
         }       
     } 
+    
+    //metodo para buscar una JRV extranjera en la lista de JRV extranjeras registradas en el registro civil
+    public JRVExtranjera buscarJRVExtranjera(String nombre){
+        for(int i = 0; i < listaJRVextranjera.size(); i++){
+            if(listaJRVextranjera.get(i).centroVotacion.equals(nombre)){
+                return listaJRVextranjera.get(i);
+            }
+        }
+        return null;
+    }
+    
+     //metodo para buscar una JRV nacional en la lista de JRV extranjeras registradas en el registro civil
+    public JRVNacional buscarJRVNacional(String nombre){
+        for(int i = 0; i < listaJRVnacional.size(); i++){
+            if(listaJRVnacional.get(i).centroVotacion.equals(nombre)){
+                return listaJRVnacional.get(i);
+            }
+        }
+        return null;
+    }
+    
+    //metodo para agregar un miembro de mesa a una JRV nacional en específico
+    public void agregarMiembroDeMesaNacional(String JRV, MiembroDeMesa nuevoMiembroDeMesa){
+        for(int i = 0; i < listaJRVnacional.size(); i++){
+            if(listaJRVnacional.get(i).centroVotacion.equals(JRV)){
+                listaJRVnacional.get(i).listaMiembrosDeMesa.add(nuevoMiembroDeMesa);
+                break;
+            }
+        }
+    }
+    //metodo para agregar un miembro de mesa a una JRV extranjera en específico
+    public void agregarMiembroDeMesaExtranjero(String JRV, MiembroDeMesa nuevoMiembroDeMesa){
+        for(int i = 0; i < listaJRVextranjera.size(); i++){
+            if(listaJRVextranjera.get(i).centroVotacion.equals(JRV)){
+                listaJRVextranjera.get(i).listaMiembrosDeMesa.add(nuevoMiembroDeMesa);
+                break;
+            }
+        }
+    }
+    
+    //metodo para buscar un miembro de mesa en una JRV
+    public MiembroDeMesa buscarMiembroDeMesaJRVE(JRV jrv, String miembro){
+        for(int i = 0; i < listaJRVextranjera.size(); i++){
+            if(listaJRVextranjera.get(i).centroVotacion.equals(jrv.centroVotacion)){
+                for(int j = 0; j < jrv.listaMiembrosDeMesa.size(); j++){
+                    if(jrv.listaMiembrosDeMesa.get(i).miembro.nombre.equals(miembro)){
+                        return jrv.listaMiembrosDeMesa.get(i);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    public MiembroDeMesa buscarMiembroDeMesaJRVN(JRV jrv, String miembro){
+        for(int i = 0; i < listaJRVnacional.size(); i++){
+            if(listaJRVnacional.get(i).centroVotacion.equals(jrv.centroVotacion)){
+                for(int j = 0; j < jrv.listaMiembrosDeMesa.size(); j++){
+                    if(jrv.listaMiembrosDeMesa.get(j).miembro.nombre.equals(miembro)){
+                        return jrv.listaMiembrosDeMesa.get(j);
+                    }
+                }
+            }
+        }
+        return null;
+    }
     
     //metodo pata obtener cantidad de votantes mayores de 100 años
     public int obtenerVotantesCentenarios(){
