@@ -37,12 +37,12 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         labelPartidoPolitico = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -83,19 +83,9 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jPanel4.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jLabel5.setText("Papeleta para Diputados");
+        jLabel5.setText("Seleccione los diputados de un partido político");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(120, 10, 140, 20);
-
-        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jButton6.setText("Votar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton6);
-        jButton6.setBounds(180, 215, 160, 40);
+        jLabel5.setBounds(80, 30, 220, 30);
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jButton4.setText("Siguiente");
@@ -105,23 +95,17 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton4);
-        jButton4.setBounds(20, 215, 160, 40);
+        jButton4.setBounds(20, 210, 160, 40);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel8.setText("Partido Politico:");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(90, 90, 90, 30);
+        jLabel8.setBounds(100, 110, 90, 30);
 
         labelPartidoPolitico.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         labelPartidoPolitico.setText("Nulo");
         jPanel4.add(labelPartidoPolitico);
-        labelPartidoPolitico.setBounds(190, 90, 90, 30);
-
-        jPanel2.add(jPanel4);
-        jPanel4.setBounds(340, 70, 360, 270);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 100, 1000, 440);
+        labelPartidoPolitico.setBounds(190, 110, 120, 30);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/done.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,15 +113,26 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(480, 610, 44, 44);
+        jPanel4.add(jButton1);
+        jButton1.setBounds(240, 210, 44, 44);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 82));
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 0, 0));
-        jLabel2.setText("Seleccion");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(450, 570, 110, 40);
+        jLabel2.setText("Votar");
+        jPanel4.add(jLabel2);
+        jLabel2.setBounds(230, 160, 80, 40);
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel6.setText("Papeleta para Diputados");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(120, 10, 140, 20);
+
+        jPanel2.add(jPanel4);
+        jPanel4.setBounds(340, 70, 360, 270);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 100, 1000, 440);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/back.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +144,7 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         jButton2.setBounds(190, 610, 44, 44);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 82));
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 0, 0));
         jLabel3.setText("Menu Principal");
         getContentPane().add(jLabel3);
@@ -171,7 +166,25 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
+        if(labelPartidoPolitico.getText().equals("Nulo")){
+            JOptionPane.showMessageDialog(rootPane, "Seleccione una opción");
+        }
+        else{
+            if(votoEmitido == false){
+                MetodosRegistroCivil.getInstance().votarDiputados(labelPartidoPolitico.getText());
+                votoEmitido = true;
+                Persona votante = MetodosRegistroCivil.getInstance().personaLogueada;
+                CandidaturaDiputado cd= MetodosRegistroCivil.getInstance().buscarCandidaturaDiputado(labelPartidoPolitico.getText());
+                VotoDiputados nuevoVotoDiputados = new VotoDiputados(cd, votante);
+                MetodosRegistroCivil.getInstance().listaVotoDiputados.add(nuevoVotoDiputados);
+                JOptionPane.showMessageDialog(rootPane, "Ud a votado exitosamente por los diputados del partido: " + labelPartidoPolitico.getText());
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Ud ya ha emitido un voto por por lo disputados, proceda al inicio.");
+            }
+
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -183,28 +196,6 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         vElecciones.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_formWindowClosing
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
-        if(labelPartidoPolitico.getText().equals("Nulo")){
-            JOptionPane.showMessageDialog(rootPane, "Seleccione una opción");
-        }
-        else{
-            if(votoEmitido == false){
-                MetodosRegistroCivil.getInstance().votarDiputados(labelPartidoPolitico.getText());
-                votoEmitido = true;
-                Persona votante = MetodosRegistroCivil.getInstance().personaLogueada;
-                CandidaturaDiputado cd= MetodosRegistroCivil.getInstance().buscarCandidaturaDiputado(labelPartidoPolitico.getText());
-                VotoDiputados nuevoVotoDiputados = new VotoDiputados(votante, cd);
-                MetodosRegistroCivil.getInstance().listaVotoDiputados.add(nuevoVotoDiputados);
-                JOptionPane.showMessageDialog(rootPane, "Ud a votado exitosamente por los diputados del partido: " + labelPartidoPolitico.getText());
-            }
-            else{
-                JOptionPane.showMessageDialog(rootPane, "Ud ya ha emitido un voto por presidente, proceda al inicio.");
-            }
-
-        }
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -264,11 +255,11 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

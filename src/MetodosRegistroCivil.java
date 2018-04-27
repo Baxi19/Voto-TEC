@@ -415,7 +415,7 @@ public class MetodosRegistroCivil {
         }
         return contador;
     }
-    
+    //metodo para contar la cantidad de votantes por canton
     public int consultarVotosPresidentePorCanton(String canton){
         int contador = 0;
         for(int i = 0; i < listaVotosPresidente.size(); i++){
@@ -426,6 +426,7 @@ public class MetodosRegistroCivil {
         return contador;
     }
     
+    //metodo para contar la cantidad de votantes por provincia
     public int consultarVotosPresidentePorProvincia(String provincia){
         int contador = 0;
         for(int i = 0; i < listaVotosPresidente.size(); i++){
@@ -436,6 +437,75 @@ public class MetodosRegistroCivil {
         return contador;
     }
     
+    //metodo para contar la cantidad de votantes por localidad
+    public int consultarVotosPresidentePorLocalidad(String localidad){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votante.domicilioElectoral.getLocalidad().nombre.equals(localidad)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    //metodo para contar la cantidad de votantes por consulado
+    public int consultarVotosPresidentePorConsulado(String consulado){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votante.domicilioElectoral.getLocalidad().consulado.nombre.equals(consulado)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    //metodo para consultar cantidadDeVotos que recibió un partido por:
+    public int consultarVotosPartidoPorDistrito(String partidoPolitico, String distrito ){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votoCandidaturaPresidente.partidoPolitico.nombre.equals(partidoPolitico)){
+                if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().nombre.equals(distrito)){
+                    contador++;
+                }
+            }   
+        }
+        return contador;
+    }
+    
+    //metodo para consultar cantidadDeVotos que recibió un partido por:
+    public int consultarVotosPartidoPorCanton(String partidoPolitico, String canton){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votoCandidaturaPresidente.partidoPolitico.nombre.equals(partidoPolitico)){
+                if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().canton.nombre.equals(canton)){
+                    contador++;
+                }
+            }   
+        }
+        return contador;
+    }
+    
+    //metodo para consultar cantidadDeVotos que recibió un partido por:
+    public int consultarVotosPartidoPorProvincia(String partidoPolitico, String provincia){
+        int contador = 0;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votoCandidaturaPresidente.partidoPolitico.nombre.equals(partidoPolitico)){
+                if(listaVotosPresidente.get(i).votante.domicilioElectoral.getDistrito().canton.provincia.nombre.equals(provincia)){
+                    contador++;
+                }
+            }   
+        }
+        return contador;
+    }
+    
+    //metodo para obtener el presidente electo
+    /*public CandidaturaDiputado obtenerGanador(){
+        ArrayList<Integer> votos;
+        for(int i = 0; i < listaVotosPresidente.size(); i++){
+            if(listaVotosPresidente.get(i).votoCandidaturaPresidente.Presidente.)
+        }
+    }
+*/
 
     // metodo para retornar la clase singleton y si no existe la crea
     public static MetodosRegistroCivil getInstance(){

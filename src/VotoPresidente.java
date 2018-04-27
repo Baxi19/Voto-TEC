@@ -8,21 +8,17 @@
  *
  * @author Fabián
  */
-public class VotoPresidente {
-    Persona votante;
+public class VotoPresidente extends Voto{
     CandidaturaPresidente votoCandidaturaPresidente; 
 
-    public VotoPresidente(Persona votante, CandidaturaPresidente votoCandidaturaPresidente) {
-        this.votante = votante;
+    public VotoPresidente(CandidaturaPresidente votoCandidaturaPresidente, Persona votante) {
+        super(votante);
         this.votoCandidaturaPresidente = votoCandidaturaPresidente;
     }
 
-    public Persona getVotante() {
-        return votante;
-    }
-
-    public void setVotante(Persona votante) {
-        this.votante = votante;
+    @Override
+    public Persona obtenerVotante() {
+        return this.votante;
     }
 
     public CandidaturaPresidente getVotoCandidaturaPresidente() {

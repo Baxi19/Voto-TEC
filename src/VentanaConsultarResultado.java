@@ -59,6 +59,26 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         cantonTextField = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        localidadTextField = new javax.swing.JTextField();
+        consuladoTextField = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        partidoTextField = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        partidoTextField1 = new javax.swing.JTextField();
+        partidoTextField2 = new javax.swing.JTextField();
+        partidoTextField3 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -124,19 +144,19 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
         jLabel1.setBounds(120, 10, 110, 110);
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel14.setText("Votantes entre 18 - 40 ");
+        jLabel14.setText("18 y 40 años");
         panelPrincipal.add(jLabel14);
-        jLabel14.setBounds(20, 380, 240, 40);
+        jLabel14.setBounds(40, 320, 180, 40);
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel19.setText("Consultar dirección por ID");
         panelPrincipal.add(jLabel19);
-        jLabel19.setBounds(0, 130, 310, 40);
+        jLabel19.setBounds(0, 120, 310, 40);
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel20.setText("Votantes +100 años");
         panelPrincipal.add(jLabel20);
-        jLabel20.setBounds(20, 240, 230, 40);
+        jLabel20.setBounds(0, 210, 230, 40);
 
         jButton4.setBackground(new java.awt.Color(0, 0, 82));
         jButton4.setForeground(new java.awt.Color(0, 0, 82));
@@ -148,7 +168,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton4);
-        jButton4.setBounds(270, 170, 50, 50);
+        jButton4.setBounds(240, 160, 40, 40);
 
         jButton6.setBackground(new java.awt.Color(0, 0, 82));
         jButton6.setForeground(new java.awt.Color(0, 0, 82));
@@ -160,17 +180,17 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton6);
-        jButton6.setBounds(270, 610, 50, 50);
+        jButton6.setBounds(240, 530, 40, 40);
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel22.setText("Votos por género");
         panelPrincipal.add(jLabel22);
-        jLabel22.setBounds(20, 310, 270, 40);
+        jLabel22.setBounds(10, 250, 200, 40);
 
         jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel25.setText("Provincia");
+        jLabel25.setText("Consulado");
         panelPrincipal.add(jLabel25);
-        jLabel25.setBounds(20, 620, 110, 30);
+        jLabel25.setBounds(10, 630, 120, 40);
 
         jButton11.setBackground(new java.awt.Color(0, 0, 82));
         jButton11.setForeground(new java.awt.Color(0, 0, 82));
@@ -182,7 +202,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton11);
-        jButton11.setBounds(270, 240, 50, 50);
+        jButton11.setBounds(240, 210, 40, 40);
 
         jButton12.setBackground(new java.awt.Color(0, 0, 82));
         jButton12.setForeground(new java.awt.Color(0, 0, 82));
@@ -194,7 +214,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton12);
-        jButton12.setBounds(270, 310, 50, 50);
+        jButton12.setBounds(240, 260, 40, 40);
 
         jButton13.setBackground(new java.awt.Color(0, 0, 82));
         jButton13.setForeground(new java.awt.Color(0, 0, 82));
@@ -206,7 +226,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton13);
-        jButton13.setBounds(270, 380, 50, 50);
+        jButton13.setBounds(240, 310, 40, 40);
 
         jButton15.setBackground(new java.awt.Color(0, 0, 82));
         jButton15.setForeground(new java.awt.Color(0, 0, 82));
@@ -218,30 +238,30 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton15);
-        jButton15.setBounds(270, 490, 50, 50);
+        jButton15.setBounds(240, 430, 40, 40);
         panelPrincipal.add(consultarDireccionTextField);
-        consultarDireccionTextField.setBounds(40, 180, 200, 30);
+        consultarDireccionTextField.setBounds(10, 160, 220, 40);
         panelPrincipal.add(distritoTextField);
-        distritoTextField.setBounds(140, 500, 100, 30);
+        distritoTextField.setBounds(130, 430, 100, 40);
         panelPrincipal.add(provinciaTextField);
-        provinciaTextField.setBounds(140, 620, 100, 30);
+        provinciaTextField.setBounds(130, 530, 100, 40);
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel26.setText("Votos  Presidente por :");
+        jLabel26.setText("Partido Político");
         panelPrincipal.add(jLabel26);
-        jLabel26.setBounds(20, 440, 340, 40);
+        jLabel26.setBounds(380, 220, 190, 40);
 
         jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel27.setText("Cantón");
         panelPrincipal.add(jLabel27);
-        jLabel27.setBounds(20, 560, 160, 30);
+        jLabel27.setBounds(380, 430, 100, 40);
 
         jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
         jLabel28.setText("Distrito");
         panelPrincipal.add(jLabel28);
-        jLabel28.setBounds(20, 490, 340, 40);
+        jLabel28.setBounds(380, 330, 100, 40);
         panelPrincipal.add(cantonTextField);
-        cantonTextField.setBounds(140, 560, 100, 30);
+        cantonTextField.setBounds(130, 480, 100, 40);
 
         jButton7.setBackground(new java.awt.Color(0, 0, 82));
         jButton7.setForeground(new java.awt.Color(0, 0, 82));
@@ -253,7 +273,124 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         });
         panelPrincipal.add(jButton7);
-        jButton7.setBounds(270, 550, 50, 50);
+        jButton7.setBounds(240, 480, 40, 40);
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel15.setText("Votantes entre  ");
+        panelPrincipal.add(jLabel15);
+        jLabel15.setBounds(20, 300, 180, 40);
+
+        jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel29.setText("Provincia");
+        panelPrincipal.add(jLabel29);
+        jLabel29.setBounds(380, 530, 110, 40);
+
+        jLabel30.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel30.setText("Localidad");
+        panelPrincipal.add(jLabel30);
+        jLabel30.setBounds(10, 580, 110, 40);
+        panelPrincipal.add(localidadTextField);
+        localidadTextField.setBounds(130, 580, 100, 40);
+        panelPrincipal.add(consuladoTextField);
+        consuladoTextField.setBounds(130, 630, 100, 40);
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 82));
+        jButton8.setForeground(new java.awt.Color(0, 0, 82));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
+        jButton8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton8);
+        jButton8.setBounds(240, 630, 40, 40);
+
+        jButton9.setBackground(new java.awt.Color(0, 0, 82));
+        jButton9.setForeground(new java.awt.Color(0, 0, 82));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
+        jButton9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton9);
+        jButton9.setBounds(240, 580, 40, 40);
+
+        jLabel31.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel31.setText("Numero de votantes por:");
+        panelPrincipal.add(jLabel31);
+        jLabel31.setBounds(10, 370, 340, 40);
+
+        jLabel32.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel32.setText("Cantidad de votos");
+        panelPrincipal.add(jLabel32);
+        jLabel32.setBounds(360, 110, 230, 40);
+        panelPrincipal.add(partidoTextField);
+        partidoTextField.setBounds(380, 260, 170, 40);
+
+        jLabel33.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel33.setText("Distrito");
+        panelPrincipal.add(jLabel33);
+        jLabel33.setBounds(10, 430, 100, 40);
+
+        jLabel34.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel34.setText("Cantón");
+        panelPrincipal.add(jLabel34);
+        jLabel34.setBounds(10, 480, 100, 40);
+
+        jLabel35.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel35.setText("Provincia");
+        panelPrincipal.add(jLabel35);
+        jLabel35.setBounds(10, 530, 110, 40);
+
+        jButton10.setBackground(new java.awt.Color(0, 0, 82));
+        jButton10.setForeground(new java.awt.Color(0, 0, 82));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
+        jButton10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton10);
+        jButton10.setBounds(510, 470, 40, 40);
+
+        jButton14.setBackground(new java.awt.Color(0, 0, 82));
+        jButton14.setForeground(new java.awt.Color(0, 0, 82));
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
+        jButton14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton14);
+        jButton14.setBounds(510, 370, 40, 40);
+
+        jButton16.setBackground(new java.awt.Color(0, 0, 82));
+        jButton16.setForeground(new java.awt.Color(0, 0, 82));
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/searchB.png"))); // NOI18N
+        jButton16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(jButton16);
+        jButton16.setBounds(510, 570, 40, 40);
+        panelPrincipal.add(partidoTextField1);
+        partidoTextField1.setBounds(380, 370, 120, 40);
+        panelPrincipal.add(partidoTextField2);
+        partidoTextField2.setBounds(380, 470, 120, 40);
+        panelPrincipal.add(partidoTextField3);
+        partidoTextField3.setBounds(380, 570, 120, 40);
+
+        jLabel36.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
+        jLabel36.setText("por partido en:");
+        panelPrincipal.add(jLabel36);
+        jLabel36.setBounds(370, 150, 210, 40);
 
         getContentPane().add(panelPrincipal);
         panelPrincipal.setBounds(350, 0, 0, 700);
@@ -278,7 +415,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             navBar = false;                 //it change the NavBar 2 status
             } 
         else{ //if navBar is close
-            panelPrincipal.setSize(350,700);//the panel for new game will change to Open
+            panelPrincipal.setSize(650,700);//the panel for new game will change to Open
             navBar = true;                    // it change the NavBar 2 status
            
         }
@@ -315,7 +452,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             Provincia d = MetodosRegistroCivil.getInstance().buscarProvincia(provinciaTextField.getText());
             if(d != null){
                 int cantidadDeVotantes = MetodosRegistroCivil.getInstance().consultarVotosPresidentePorProvincia(d.nombre);
-                JOptionPane.showMessageDialog(rootPane, "Cantidad de votantes en la provincia " + d.nombre + ": " + cantidadDeVotantes);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votos en la provincia " + d.nombre + ": " + cantidadDeVotantes);
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "La provincia digitada no existe.");
@@ -334,7 +471,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
         int m;
         n = MetodosRegistroCivil.getInstance().obtenerCantidadHombres();
         m = MetodosRegistroCivil.getInstance().obtenerCantidadMujeres();
-        JOptionPane.showMessageDialog(rootPane,n + "hombres, " + m + " mujeres");
+        JOptionPane.showMessageDialog(rootPane,n + " total de hombres, " + m + " total de mujeres.");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -352,7 +489,7 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             Distrito d = MetodosRegistroCivil.getInstance().buscarDistrito(distritoTextField.getText());
             if(d != null){
                 int cantidadDeVotantes = MetodosRegistroCivil.getInstance().consultarVotosPresidentePorDistrito(d.nombre);
-                JOptionPane.showMessageDialog(rootPane, "Cantidad de votantes en el distrito" + d.nombre + ": " + cantidadDeVotantes);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votos" + d.nombre + ": " + cantidadDeVotantes);
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "El distrito digitado no existe");
@@ -386,6 +523,94 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if(consuladoTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Digite un consulado a buscar.");
+        }
+        else{
+            Localidad d = MetodosRegistroCivil.getInstance().buscarLocalidad(consuladoTextField.getText());
+            if(d != null){
+                int cantidadDeVotantes = MetodosRegistroCivil.getInstance().consultarVotosPresidentePorConsulado(d.nombre);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votantes en el consulado " + d.nombre + ": " + cantidadDeVotantes);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Consulado digitado no existe.");
+            }
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+    
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        if(localidadTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Digite una localidad a buscar");
+        }
+        else{
+            Localidad d = MetodosRegistroCivil.getInstance().buscarLocalidad(localidadTextField.getText());
+            if(d != null){
+                int cantidadDeVotantes = MetodosRegistroCivil.getInstance().consultarVotosPresidentePorLocalidad(d.nombre);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votantes en la localidad " + d.nombre + ": " + cantidadDeVotantes);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Localidad digitada no existe");
+            }
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if(partidoTextField.getText().isEmpty() | partidoTextField2.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío");
+        }
+        else{
+            PartidoPolitico pp = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoTextField.getText());
+            Canton dp = MetodosRegistroCivil.getInstance().buscarCanton(partidoTextField2.getText());
+            if(pp != null && dp != null){
+                int cant = MetodosRegistroCivil.getInstance().consultarVotosPartidoPorCanton(pp.nombre, dp.nombre);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votos al partido politico: " + pp.nombre + " en el canton:" + dp.nombre + "es igual a: " + cant);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Partido politico/canton no encontrado.");
+            }
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+       // TODO add your handling code here:
+        if(partidoTextField.getText().isEmpty() | partidoTextField1.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío");
+        }
+        else{
+            PartidoPolitico pp = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoTextField.getText());
+            Distrito dp = MetodosRegistroCivil.getInstance().buscarDistrito(partidoTextField1.getText());
+            if(pp != null && dp != null){
+                int cant = MetodosRegistroCivil.getInstance().consultarVotosPartidoPorProvincia(pp.nombre, dp.nombre);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votos al partido politico: " + pp.nombre + " en el distrito:" + dp.nombre + "es igual a: " + cant);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Partido politico/distrito no encontrado.");
+            }
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        if(partidoTextField.getText().isEmpty() | partidoTextField3.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío");
+        }
+        else{
+            PartidoPolitico pp = MetodosRegistroCivil.getInstance().buscarPartidoPolitico(partidoTextField.getText());
+            Provincia dp = MetodosRegistroCivil.getInstance().buscarProvincia(partidoTextField3.getText());
+            if(pp != null && dp != null){
+                int cant = MetodosRegistroCivil.getInstance().consultarVotosPartidoPorDistrito(pp.nombre, dp.nombre);
+                JOptionPane.showMessageDialog(rootPane, "Cantidad de votos al partido politico: " + pp.nombre + " en la provincia: " + dp.nombre + "es igual a: " + cant);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Partido politico/provincia no encontrado.");
+            }
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
     public void cerrar() {
         VentanaElecciones ventanaElecciones = new VentanaElecciones();
         ventanaElecciones.setVisible(true);
@@ -395,20 +620,27 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cantonTextField;
+    private javax.swing.JTextField consuladoTextField;
     private javax.swing.JTextField consultarDireccionTextField;
     private javax.swing.JTextField distritoTextField;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -418,10 +650,23 @@ public class VentanaConsultarResultado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField localidadTextField;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JTextField partidoTextField;
+    private javax.swing.JTextField partidoTextField1;
+    private javax.swing.JTextField partidoTextField2;
+    private javax.swing.JTextField partidoTextField3;
     private javax.swing.JTextField provinciaTextField;
     // End of variables declaration//GEN-END:variables
 }

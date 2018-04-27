@@ -237,7 +237,7 @@ public class VentanaVotoPresidente extends javax.swing.JFrame {
                 Persona votante = MetodosRegistroCivil.getInstance().personaLogueada;
                 MetodosRegistroCivil.getInstance().votarPresidente(labelPresidente.getText());
                 CandidaturaPresidente cp = MetodosRegistroCivil.getInstance().buscarCandidaturaPresidente(labelPresidente.getText());
-                VotoPresidente nuevoVoto = new VotoPresidente(votante, cp);
+                VotoPresidente nuevoVoto = new VotoPresidente(cp, votante);
                 MetodosRegistroCivil.getInstance().listaVotosPresidente.add(nuevoVoto);
                 votoEmitido = true;
                 JOptionPane.showMessageDialog(rootPane, "Ud a votado exitosamente por el candidato: " + labelPresidente.getText());
