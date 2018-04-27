@@ -202,7 +202,7 @@ public class VentanaVotoDiputado extends javax.swing.JFrame {
         
         String pp = MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.get(punteroCandidaturas).partidoPolitico.nombre;
         labelPartidoPolitico.setText(pp);
-        if (punteroCandidaturas + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
+        if (punteroCandidaturas + 1 > (MetodosRegistroCivil.getInstance().listaCandidaturasDiputado.size() - 1)) {
             punteroCandidaturas = 0;
         } else {
             punteroCandidaturas++;

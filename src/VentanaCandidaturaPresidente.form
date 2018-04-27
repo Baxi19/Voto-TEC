@@ -260,7 +260,7 @@
                                       <Component id="jLabel18" min="-2" pref="40" max="-2" attributes="0"/>
                                       <Component id="jTextFieldNombreVisepresidente2" min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel23" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
                                       <Component id="bPlanGobierno" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
@@ -436,7 +436,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="25" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Presidente"/>
+            <Property name="text" type="java.lang.String" value=" C&#xe9;dula presidente"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="bDone">
@@ -467,7 +467,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="25" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Vicepresidente 1"/>
+            <Property name="text" type="java.lang.String" value=" C&#xe9;dula vicepresidente 1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
@@ -475,7 +475,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="25" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Vicepresidente 2"/>
+            <Property name="text" type="java.lang.String" value=" C&#xe9;dula vicepresidente 2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNombreVisepresidente2">

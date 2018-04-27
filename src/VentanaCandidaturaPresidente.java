@@ -195,7 +195,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         partidoNombre.setText("Nombre Partido");
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel16.setText("Presidente");
+        jLabel16.setText(" Cédula presidente");
 
         bDone.setBackground(new java.awt.Color(255, 255, 255));
         bDone.setForeground(new java.awt.Color(0, 0, 82));
@@ -208,10 +208,10 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
         });
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel17.setText("Vicepresidente 1");
+        jLabel17.setText(" Cédula vicepresidente 1");
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 25)); // NOI18N
-        jLabel18.setText("Vicepresidente 2");
+        jLabel18.setText(" Cédula vicepresidente 2");
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -292,7 +292,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldNombreVisepresidente2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(bPlanGobierno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -371,9 +371,9 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                 imagenIcono.setText(null);
                 //mostrar imagen en label
                 imagenIcono.setIcon(fotoSubida);
-                foto = (ImageIcon) fotoSubida;
-                
-            } catch (Exception ex) {
+                foto = (ImageIcon) fotoSubida; 
+            } 
+            catch (Exception ex) {
                 JOptionPane.showMessageDialog(null,"Error al abrir la imagen " + ex);
             }
         }
@@ -417,6 +417,7 @@ public class VentanaCandidaturaPresidente extends javax.swing.JFrame {
                     CandidaturaPresidente cPresidente = new CandidaturaPresidente(presidente, vicePresidente1, vicePresidente2, partidoPolitico, foto, plan, curriculum, admin);
                     System.out.println("Candidatura registrada por: " + cPresidente.admin.nombre);
                     MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.add(cPresidente);
+                    JOptionPane.showMessageDialog(rootPane, "Candidatura agregada exitosamente!");
                 }
                 else{
                     JOptionPane.showMessageDialog(rootPane, "Al menos un candidato postulado debe ser mujer.");

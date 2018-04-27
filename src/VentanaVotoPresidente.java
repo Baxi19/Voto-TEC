@@ -220,7 +220,7 @@ public class VentanaVotoPresidente extends javax.swing.JFrame {
         labelPresidente.setText(presi);
         labelVicepresidente.setText(vicePresi);
         labelPartidoPolitico.setText(pp);
-        if (punteroCandidaturas + 1 > (MetodosRegistroCivil.getInstance().listaPartidosPoliticos.size() - 1)) {
+        if (punteroCandidaturas + 1 > (MetodosRegistroCivil.getInstance().listaCandidaturasPresidente.size() - 1)) {
             punteroCandidaturas = 0;
         } else {
             punteroCandidaturas++;
