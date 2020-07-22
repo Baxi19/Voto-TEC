@@ -1,4 +1,4 @@
 # Voto-TEC
-## Segundo Proyecto de Programaci♀n Orientada a Objetos
+## Segundo Proyecto de Programación Orientada a Objetos
 
 ## Randald Villegas & Fabian Zamora
