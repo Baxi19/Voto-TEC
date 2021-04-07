@@ -2,6 +2,6 @@
 
 ## Segundo Proyecto 
 
-##Programación Orientada a Objetos
+## Programación Orientada a Objetos
 
 ## Randald Villegas & Fabian Zamora
